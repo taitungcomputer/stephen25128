@@ -1,0 +1,64 @@
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="mb-3">
+        <label>上傳 CSV</label>
+        <input type="file" name="file" class="form-control">
+    </div>
+    {% if error %}
+        <div class="alert alert-danger">{{ error }}</div>
+    {% endif %}
+
+
+    {% if columns %}
+        <div class="mb-3">
+            <label>開始日期</label>
+            <input type="date" name="start_date" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label>結束日期</label>
+            <input type="date" name="end_date" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label>Group By 欄位</label>
+            <select name="groupby_column" class="form-select">
+                {% for col in columns %}
+                    <option value="{{ col }}">{{ col }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <div class="mb-3">
+            <label>加總欄位</label>
+            <select name="sum_column" class="form-select">
+                {% for col in columns %}
+                    <option value="{{ col }}">{{ col }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    {% endif %}
+
+    <button type="submit" class="btn btn-primary">送出</button>
+</form>
+<a href="https://stephen25128.duckdns.org/" class="btn btn-secondary btn-lg float-end">
+          回首頁
+                </a>
+{% if result %}
+<h3>分析結果</h3>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            {% for col in result.columns %}
+                <th>{{ col }}</th>
+            {% endfor %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in result.values %}
+            <tr>
+                {% for val in row %}
+                    <td>{{ val }}</td>
+                {% endfor %}
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endif %}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>隨機出題</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+    <div class="container py-5">       
+        <div class="card shadow-sm">
+            <div class="card-body text-center">
+                <h2 class="card-title mb-4">題目</h2>
+                <p class="fs-4 fw-bold text-primary">{{ question }}</p>
+
+                <!-- 顯示答案或按鈕 -->
+                {% if answer %}
+                <div class="alert alert-success mt-4">
+                    <strong>答案：</strong> {{ answer }}
+                </div>
+                {% else %}
+                <form method="get" class="d-inline">
+                    <input type="hidden" name="idx" value="{{ idx }}">
+                    <button type="submit" name="show_answer" value="true" class="btn btn-success btn-lg me-2">
+                        <i class="bi bi-eye"></i> 顯示答案
+                    </button>
+                </form>
+                {% endif %}
+
+                <!-- 下一題 -->
+                <form method="get" class="d-inline">
+                    <button type="submit" class="btn btn-primary btn-lg me-2">
+                        <i class="bi bi-arrow-right-circle"></i> 下一題
+                    </button>
+                </form>
+
+                <!-- 回首頁 -->
+                <a href="https://stephen25128.duckdns.org/" class="btn btn-outline-secondary btn-lg">
+                    <i class="bi bi-house-door"></i> 回首頁
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap Icons -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>

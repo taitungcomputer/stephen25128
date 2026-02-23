@@ -1,0 +1,222 @@
+# <!=Copyright (C) 2024 Good Looking Themes
+# This file is distributed under the GNU General Public License v3 or later.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Cottageinn 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/cottageinn\n"
+"POT-Creation-Date: 2024-12-15 09:16:39+00:00\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2024-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: en\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Country: United States\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-Bookmarks: \n"
+"X-Textdomain-Support: yes\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: inc/customizer.php:12
+msgid "Information Links"
+msgstr ""
+
+#: inc/customizer.php:27
+msgid "<li>View demo: %1$sClick here.%2$s</li>"
+msgstr ""
+
+#: inc/customizer.php:28
+msgid "<li>View documentation: %1$sClick here.%2$s</li>"
+msgstr ""
+
+#: inc/customizer.php:29
+msgid "<li>Theme info: %1$sClick here.%2$s</li>"
+msgstr ""
+
+#: inc/customizer.php:30
+msgid "<li>Support ticket: %1$sClick here.%2$s</li>"
+msgstr ""
+
+#: inc/customizer.php:31
+msgid "<li>More WordPress Themes: %1$sClick here.%2$s</li>"
+msgstr ""
+
+#: inc/customizer.php:32
+msgid "<li>Go Premium: %1$sClick here.%2$s</li>"
+msgstr ""
+
+#: inc/customizer.php:40
+msgid "Important Links"
+msgstr ""
+
+#: inc/customizer.php:61
+msgid "Gallery Select Six"
+msgstr ""
+
+#: inc/customizer.php:79
+msgid "Enable Why Us Section"
+msgstr ""
+
+#: inc/customizer.php:80
+msgid "Section Subtitle"
+msgstr ""
+
+#: inc/customizer.php:83 inc/extra-functions.php:87
+msgid "WELCOME TO OUR COTTAGE"
+msgstr ""
+
+#: inc/customizer.php:84 inc/extra-functions.php:86
+msgid "Find Your Cozy Retreat in Nature's Embrace"
+msgstr ""
+
+#: inc/customizer.php:85 inc/extra-functions.php:81
+msgid "Learn More"
+msgstr ""
+
+#: inc/customizer.php:87 inc/extra-functions.php:83
+msgid "Take A Tour"
+msgstr ""
+
+#: inc/customizer.php:91
+msgid "Discover the Heart and Soul Behind Our Cottages"
+msgstr ""
+
+#: inc/customizer.php:94
+msgid "Experience the Magic of Our Cottages"
+msgstr ""
+
+#: inc/customizer.php:97
+msgid "Our Gallery"
+msgstr ""
+
+#: inc/customizer.php:98
+msgid "A Glimpse of Serenity"
+msgstr ""
+
+#: inc/customizer.php:101
+msgid "Ready to Find Your Perfect Escape?"
+msgstr ""
+
+#: inc/customizer.php:102
+msgid ""
+"Whether you\\’re looking for a peaceful retreat, a cozy hideaway, or an "
+"adventure in nature, our cottages are the perfect escape. Discover your "
+"ideal getaway now."
+msgstr ""
+
+#: inc/customizer.php:103
+msgid "Plan Your Escape"
+msgstr ""
+
+#: inc/customizer.php:107
+msgid "Stories from the Cottage"
+msgstr ""
+
+#: inc/customizer.php:128
+msgid "Footer Top Section"
+msgstr ""
+
+#: inc/customizer.php:149
+msgid "Enable Footer Top Section"
+msgstr ""
+
+#: inc/customizer.php:158 sections/footer-top.php:9
+msgid "Book Through Your Preferred Platform"
+msgstr ""
+
+#: inc/customizer.php:168
+msgid "Section Title"
+msgstr ""
+
+#: inc/customizer.php:196
+msgid "Travel Platforms"
+msgstr ""
+
+#: inc/customizer.php:200
+msgid "Select Image"
+msgstr ""
+
+#: inc/customizer.php:204
+msgid "Link"
+msgstr ""
+
+#: inc/customizer.php:205
+msgid "Example: https://facebook.com"
+msgstr ""
+
+#: inc/customizer.php:210
+msgid "links"
+msgstr ""
+
+#: inc/customizer.php:234
+msgid "Enable to open link in a new tab"
+msgstr ""
+
+#: sections/blog.php:9
+msgid "OUR BLOG"
+msgstr ""
+
+#: sections/blog.php:10
+msgid "Our News And Blogs"
+msgstr ""
+
+#: sections/blog.php:12
+msgid "Read More"
+msgstr ""
+
+#: sections/gallery.php:9
+msgid "OUR COLLECTION"
+msgstr ""
+
+#: sections/gallery.php:10
+msgid "Our Featured Gallery"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Cottageinn"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://glthemes.com/wordpress-theme/cottageinn/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Cottageinn is a lightweight, elegant, and free WordPress theme tailored for "
+"cottages, cabins, vacation rentals, lodges, and other hospitality-related "
+"businesses. It's the ideal solution for building a stunning website to "
+"showcase your cozy retreat or countryside getaway. The theme features a "
+"clean, modern design that highlights your property's charm, attracting "
+"visitors from across the globe. With its intuitive and user-friendly "
+"interface, Cottageinn provides visitors with a seamless browsing "
+"experience. This free Cottageinn WordPress theme enables you to set up your "
+"website quickly and effortlessly, without requiring any coding expertise. "
+"Its lightweight design, speed optimization, and SEO-friendly structure make "
+"it a perfect choice to boost your online visibility. Additionally, the "
+"responsive layout ensures a captivating user experience on all devices, "
+"whether desktops, tablets, or smartphones. If your cottageinn is listed on "
+"platforms like Airbnb, Booking.com, TripAdvisor, or similar booking sites, "
+"the Cottageinn theme is an excellent tool to complement those listings by "
+"showcasing your property beautifully on your website. This can help you "
+"generate direct bookings, boosting your revenue and offering more control "
+"over your rental operations. Don’t take our word for it; try the theme "
+"here: https://glthemes.com/live-demo/?theme=cottageinn. If you stumble upon "
+"any issues or have queries about the theme, refer to the official theme "
+"documentation: https://glthemes.com/documentation/resort-one/ or leave an "
+"inquiry at https://glthemes.com/support/"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Good Looking Themes"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://glthemes.com/"
+msgstr ""

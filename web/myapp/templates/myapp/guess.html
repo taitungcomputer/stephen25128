@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>猜數字遊戲</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+
+<body class="bg-light">
+
+  <div class="container py-5">
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+
+        <!-- 標題 -->
+        <div class="text-center mb-4">
+          <h1 class="fw-bold text-primary">猜數字遊戲</h1>
+          <p class="text-muted">輸入 4 位數字來挑戰吧！</p>
+        </div>
+
+        <!-- 表單 -->
+        <form method="get" action="" class="input-group mb-4">
+          <input type="text" name="number" value="{{bs}}" minlength="4" maxlength="4" required 
+                 class="form-control form-control-lg" placeholder="輸入4位數字">
+          <button type="submit" class="btn btn-success btn-lg">
+            <i class="bi bi-send-fill"></i> 送出
+          </button>
+        </form>
+
+        <!-- 答案區塊 -->
+        {% if check %}
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body text-center">
+            <h5 class="card-title text-info">遊戲結果</h5>
+            <div class="alert alert-success">
+              <i class="bi bi-check-circle-fill"></i> 答案是：<strong>{{ks}}</strong><br>
+              {{check}}
+            </div>
+            <a href="{% url 'guess' %}" class="btn btn-primary btn-lg">
+              <i class="bi bi-arrow-repeat"></i> 重新玩
+            </a>
+          </div>
+        </div>
+        {% endif %}
+
+        <!-- 歷史猜測 -->
+        {% if not check %}
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title"><i class="bi bi-clock-history"></i> 歷史猜測</h5>
+            <ul class="list-group list-group-flush">
+              {% for bs,rs in rslista %}
+              <li class="list-group-item">
+                第 {{ forloop.counter }} 次：<span class="fw-bold">{{bs}}</span> → {{rs}}
+              </li>
+              {% endfor %}
+            </ul>
+          </div>
+        </div>
+
+        <!-- 剩餘次數 -->
+        <div class="alert alert-warning text-center">
+          <i class="bi bi-exclamation-triangle-fill"></i> 還有 <strong>{{attempts_left}}</strong> 次機會
+        </div>
+
+        <!-- 重置與回首頁 -->
+        <div class="d-flex justify-content-center gap-3 mt-3">
+          <a href="{% url 'guess' %}?number=0000&dd=renew" class="btn btn-outline-danger btn-lg">
+            <i class="bi bi-x-circle"></i> 計數重置
+          </a>
+          <a href="https://stephen25128.duckdns.org/" class="btn btn-outline-secondary btn-lg">
+            <i class="bi bi-house-door"></i> 回首頁
+          </a>
+        </div>
+        {% endif %}
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

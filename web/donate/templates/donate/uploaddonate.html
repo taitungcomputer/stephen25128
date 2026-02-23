@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>奉獻分析工具</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+<div class="container py-5">
+
+    <!-- 標題 -->
+    <div class="text-center mb-5">
+        <h1 class="fw-bold text-primary">教會帳務分析工具</h1>
+        <p class="text-muted">上傳奉獻資料，快速生成統計分析</p>
+    </div>
+
+    <!-- 上傳表單 -->
+    <div class="card shadow-sm mb-4 border-0">
+        <div class="card-body">
+            <form method="post" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="mb-3">
+                    {{ form.as_p }}
+                </div>
+                <div class="d-grid">
+                    <button type="submit" class="btn btn-primary btn-lg">
+                        <i class="bi bi-bar-chart-fill"></i> 開始分析
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- 分析結果 -->
+    {% if result_records %}
+    <div class="card shadow-sm border-0">
+        <div class="card-header bg-primary text-white">
+            <h5 class="mb-0"><i class="bi bi-clipboard-data"></i> 分析結果</h5>
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-hover align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            {% for col in result_columns %}
+                            <th scope="col">{{ col }}</th>
+                            {% endfor %}
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in result_records %}
+                        <tr>
+                            {% for val in row %}
+                            <td>{{ val }}</td>
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            {% if total_amount %}
+            <div class="alert alert-info mt-4 text-center fw-bold">
+                <i class="bi bi-cash-stack"></i> 總金額：{{ total_amount }}
+            </div>
+            {% endif %}
+        </div>
+    </div>
+    {% endif %}
+
+    <!-- 回首頁按鈕 -->
+    <div class="d-flex justify-content-center mt-5">
+        <a href="https://stephen25128.duckdns.org/" class="btn btn-outline-secondary btn-lg px-5">
+            <i class="bi bi-house-door"></i> 回首頁
+        </a>
+    </div>
+</div>
+
+<!-- Bootstrap Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+</body>
+</html>

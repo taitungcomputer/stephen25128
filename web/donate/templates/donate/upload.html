@@ -1,0 +1,53 @@
+{% extends "base.html" %}
+
+{% block title %}Upload File{% endblock %}
+
+{% block content %}
+<div class="card shadow-sm">
+    <div class="card-body">
+        <h2 class="card-title mb-3">上傳格式：第一欄編號或名稱；第二欄金額</h2>
+        <form method="post" enctype="multipart/form-data" class="mb-3">
+            {% csrf_token %}
+            <div class="mb-3">
+                {{ form.file.label_tag }}
+                {{ form.file }}
+                <div class="form-text">
+                    只支援 .xlsx 檔案
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Upload</button>
+        </form>
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert alert-{{ message.tags }} alert-dismissible fade show" role="alert">
+            {{ message }}
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        {% if result %}
+        <h3 class="mt-4">Totals</h3>
+        <table class="table table-hover table-bordered align-middle">
+            <thead class="table-dark">
+                <tr>
+                    <th scope="col">奉獻編號</th>
+                    <th scope="col">年度統計</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for identifier, total in result.items %}
+                <tr>
+                    <td>{{ identifier }}</td>
+                    <td class="text-end">{{ total }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        {% else %}
+        <p class="text-muted">尚未上傳任何檔案。</p>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}

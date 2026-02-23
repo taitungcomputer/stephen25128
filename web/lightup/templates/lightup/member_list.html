@@ -1,0 +1,20 @@
+{% extends "lightup/base.html" %}
+
+{% block title %}
+會友表列 - 浸信會靈光堂會務管理系統
+{% endblock title %}
+
+{% block blog_content %}
+<h2>
+  會友表列
+</h2>
+<div class="member-grid">
+  {% for member in members %}
+  {% include "lightup/components/member_card.html" %}
+  {% empty %}
+  <p>
+    目前沒有會員資料
+  </p>
+  {% endfor %}
+</div>
+{% endblock blog_content %}

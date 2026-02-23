@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  <form method="get" action="">
+    <input type="text" name="number" value="{{bs}}" height="32pt" minlength="4" maxlength="4" required>
+    <input type="submit" name="ok">
+  </form>
+  <!--題目：{{ks}}
+  你輸入的數字：{{bs}} <br>-->
+ <p style = "font-size:24px;color:blue;"> 答對情形：{{A}}A{{B}}B<br>
+  {%if check %}
+    答案是：{{ks}} <br>
+    {{check}}<br>
+    <a href = http://114.35.154.57/myapp/guess/>重新玩</a>
+  {% endif  %}   </p>
+  
+  {{bs}} --> {{rs}}
+
+  <p>
+
+  <p style = "color:#336699;font-size:16px;">還有{{attempts}}次機會</p> 
+  <a href="http://114.35.154.57/myapp/guess/?number=0000&dd=renew">計數重置</a> 
+</body>
+</html>

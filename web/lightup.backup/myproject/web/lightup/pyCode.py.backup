@@ -1,0 +1,44 @@
+import os
+from django.shortcuts import render
+
+def chineseBible(request):
+    # 1. 文章檔案路徑
+    file_path = "/myproject/web/lightup/source/ChineseBible.txt"
+
+    # 2. 讀檔
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            text = f.read()
+    except FileNotFoundError:
+        return render(request, "lightup/chinesebible.html", {
+            "error": f"檔案不存在：{file_path}"
+        })
+
+    # 3. 取得搜尋字與範圍
+    keyword = request.GET.get("kword", "耶穌").strip()
+    k = int(request.GET.get("klength", "20").strip())
+
+    # 4. 搜尋所有出現位置
+    results = []
+    start_pos = 0
+    while True:
+        pos = text.find(keyword, start_pos)
+        if pos == -1:
+            break
+        start = max(0, pos - k)
+        end = min(len(text), pos + len(keyword) + k)
+        snippet = text[start:end]
+        results.append(snippet)
+        start_pos = pos + len(keyword)
+
+    # 5. 存入 session（直接覆蓋）
+    request.session["rslist"] = [(i + 1, snippet) for i, snippet in enumerate(results)]
+
+    # 6. 傳給模板
+    return render(request, "lightup/chinesebible.html", {
+        "keyword": keyword,
+        "k": k,
+        "results": results,
+        "count": len(results),
+        "file_path": file_path
+    })

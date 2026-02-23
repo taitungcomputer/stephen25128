@@ -1,0 +1,54 @@
+import os
+from django.shortcuts import render
+
+def hello(request):
+    return render(request, {"k":"ok"})
+
+
+def chineseBible(request):
+    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    # 🔹 模板絕對路徑
+    template_path = os.path.join(BASE_DIR,"templates","lightup","chinesebible.html")
+
+    # 🔹 中文聖經檔案絕對路徑
+    #file_path = "/myproject/web/lightup/source/ChineseBible.txt"
+     
+
+    #BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+    file_path = os.path.join(BASE_DIR, "source", "ChineseBible.txt")
+    
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            text = f.read()
+    except FileNotFoundError:
+        return render(request, template_path, {
+            "error": f"檔案不存在：{file_path}"
+        })
+
+    # 🔹 取得關鍵字與前後字元數
+    keyword = request.GET.get("kword", "耶穌").strip()
+    k = int(request.GET.get("klength", "20").strip())
+
+    # 🔹 搜尋所有出現位置
+    results = []
+    start_pos = 0
+    while True:
+        pos = text.find(keyword, start_pos)
+        if pos == -1:
+            break
+        start = max(0, pos - k)
+        end = min(len(text), pos + len(keyword) + k)
+        snippet = text[start:end]
+        results.append(snippet)
+        start_pos = pos + len(keyword)
+
+    # 🔹 存入 session
+    request.session["rslist"] = [(i+1, s) for i, s in enumerate(results)]
+
+    # 🔹 傳給模板
+    return render(request, template_path, {
+        "keyword": keyword,
+        "k": k,
+        "results": results,
+        "count": len(results),
+    })

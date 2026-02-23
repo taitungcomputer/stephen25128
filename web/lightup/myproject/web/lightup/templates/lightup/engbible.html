@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>English Bible Survey</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; line-height: 1.6; padding: 20px; }
+        .error { color: red; }
+        .result { border-bottom: 1px solid #ccc; padding: 5px 0; }
+        form { margin-bottom: 20px; }
+        input[type="text"], input[type="number"] { padding: 5px; }
+        button { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+
+<h1>English Bible Survey Tools --Stephen @ GBC2025</h1>
+
+{% if error %}
+    <p class="error">{{ error }}</p>
+{% endif %}
+
+<form method="get">
+    <label for="kword">Keyword：</label>
+    <input type="text" id="kword" name="kword" value="{{ keyword|default:'耶穌' }}">
+    <label for="klength">Expand Chars：</label>
+    <input type="number" id="klength" name="klength" value="{{ k|default:20 }}">
+    <button type="submit">Start</button>
+</form>
+
+<p>Total {{ count|default:0 }} items：</p>
+
+{% if results %}
+    <ul>
+        {% for snippet in results %}
+            <li class="result">{{ snippet|linebreaksbr }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Not found</p>
+{% endif %}
+
+</body>
+</html>
+

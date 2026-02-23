@@ -1,0 +1,9 @@
+Django>=5.2,<6.0
+gunicorn
+psycopg2-binary
+django-bootstrap5
+openpyxl
+django-extensions
+pandas>=2.2
+
+Pillow

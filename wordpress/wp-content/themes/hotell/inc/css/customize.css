@@ -1,0 +1,70 @@
+/** For hiding video section notice */
+#sub-accordion-section-header_image .customize-section-description-container .customize-section-title .customize-control-notifications-container{
+    visibility: hidden;
+    height: 0;    
+}
+
+.customize-control-description ul li{
+	padding-left: 20px;
+	position: relative;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.customize-control-description ul li:after{
+    content: '';
+    background-image: url('data:image/svg+xml;utf-8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path fill="%23111" d="M173.898 439.404l-166.4-166.4c-9.997-9.997-9.997-26.206 0-36.204l36.203-36.204c9.997-9.998 26.207-9.998 36.204 0L192 312.69 432.095 72.596c9.997-9.997 26.207-9.997 36.204 0l36.203 36.204c9.997 9.997 9.997 26.206 0 36.204l-294.4 294.401c-9.998 9.997-26.207 9.997-36.204-.001z"></path></svg>');
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 9px;
+    height: 28px;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    transition: linear 0.2s;
+}
+
+#sub-accordion-section-theme_info .customize-control-title{
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+/* For inter linking in customizer control */
+.text-inner-link{
+    text-decoration: underline;
+     color: #0073aa;
+ }
+.text-inner-link:hover{
+     color: #00a0d2;
+     cursor: pointer;
+}
+
+
+#customize-control-theme_info_theme .customize-control-description ul li {
+    font-style: initial;
+    color: #000;
+    margin-bottom: 14px;
+}
+#customize-control-theme_info_theme .customize-control-description ul li a {
+    font-style: italic;
+}
+
+.accordion-section-title .button-secondary  {
+    margin-top: -4px;
+    font-weight: 700;
+    margin-left: 8px;
+    background: #AF9065;
+    color: #fff;
+    border-color: #AF9065;
+    padding: 0 20px 1px;
+
+}
+
+.accordion-section-title .button-secondary:hover, .accordion-section-title .button-secondary:active, .accordion-section-title .button-secondary:focus {
+    background-color: #FFAC41;
+    border-color: #FFAC41 !important;
+    color: #fff;
+    box-shadow: none;
+}

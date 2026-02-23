@@ -1,0 +1,97 @@
+{% extends "lightup/base.html" %}
+
+{% block title %}
+聖工支出 - 浸信會靈光堂會務管理系統
+{% endblock title %}
+
+{% block blog_content %}
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <h2>聖工支出管理</h2>
+</div>
+
+{% regroup outcomes by record_date.year as year_list %}
+
+<div class="accordion" id="accordionYear">
+    {% for year in year_list %}
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="headingYear{{ year.grouper }}">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#collapseYear{{ year.grouper }}" aria-expanded="false"
+                aria-controls="collapseYear{{ year.grouper }}">
+                {{ year.grouper }} 年
+            </button>
+        </h2>
+        <div id="collapseYear{{ year.grouper }}" class="accordion-collapse collapse"
+            aria-labelledby="headingYear{{ year.grouper }}" data-bs-parent="#accordionYear">
+            <div class="accordion-body">
+
+                {% regroup year.list by record_date.month as month_list %}
+                <div class="accordion" id="accordionMonth{{ year.grouper }}">
+                    {% for month in month_list %}
+                    <div class="accordion-item">
+                        <h2 class="accordion-header" id="headingMonth{{ year.grouper }}{{ month.grouper }}">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#collapseMonth{{ year.grouper }}{{ month.grouper }}"
+                                aria-expanded="false"
+                                aria-controls="collapseMonth{{ year.grouper }}{{ month.grouper }}">
+                                {{ month.grouper }} 月
+                            </button>
+                        </h2>
+                        <div id="collapseMonth{{ year.grouper }}{{ month.grouper }}" class="accordion-collapse collapse"
+                            aria-labelledby="headingMonth{{ year.grouper }}{{ month.grouper }}"
+                            data-bs-parent="#accordionMonth{{ year.grouper }}">
+                            <div class="accordion-body">
+
+                                {% regroup month.list by record_date.day as day_list %}
+                                <div class="accordion" id="accordionDay{{ year.grouper }}{{ month.grouper }}">
+                                    {% for day in day_list %}
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header"
+                                            id="headingDay{{ year.grouper }}{{ month.grouper }}{{ day.grouper }}">
+                                            <button class="accordion-button collapsed" type="button"
+                                                data-bs-toggle="collapse"
+                                                data-bs-target="#collapseDay{{ year.grouper }}{{ month.grouper }}{{ day.grouper }}"
+                                                aria-expanded="false"
+                                                aria-controls="collapseDay{{ year.grouper }}{{ month.grouper }}{{ day.grouper }}">
+                                                {{ day.grouper }} 日
+                                            </button>
+                                        </h2>
+                                        <div id="collapseDay{{ year.grouper }}{{ month.grouper }}{{ day.grouper }}"
+                                            class="accordion-collapse collapse"
+                                            aria-labelledby="headingDay{{ year.grouper }}{{ month.grouper }}{{ day.grouper }}"
+                                            data-bs-parent="#accordionDay{{ year.grouper }}{{ month.grouper }}">
+                                            <div class="accordion-body">
+                                                <ul class="list-group">
+                                                    {% for outcome in day.list %}
+                                                    <li
+                                                        class="list-group-item d-flex justify-content-between align-items-center">
+                                                        <span>
+                                                            {{ outcome.outcome_item.name }}
+                                                            -
+                                                            <small class="text-muted ms-2">{{ outcome.name }}</small>
+                                                        </span>
+                                                        <span class="badge bg-danger rounded-pill">{{ outcome.account
+                                                            }}</span>
+                                                    </li>
+                                                    {% endfor %}
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {% endfor %}
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+
+            </div>
+        </div>
+    </div>
+    {% empty %}
+    <p>目前沒有支出資料。</p>
+    {% endfor %}
+</div>
+{% endblock blog_content %}

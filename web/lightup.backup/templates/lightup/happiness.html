@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>幸福小組分享搜尋</title>
+    <style>
+        body { font-family: "Microsoft JhengHei", sans-serif; line-height: 1.6; padding: 20px; }
+        .error { color: red; }
+        .result { border-bottom: 1px solid #ccc; padding: 5px 0; }
+        form { margin-bottom: 20px; }
+        input[type="text"], input[type="number"] { padding: 5px; }
+        button { padding: 5px 10px; }
+    </style>
+</head>
+<body>
+
+<h1>幸福小組分享</h1>
+
+{% if error %}
+    <p class="error">{{ error }}</p>
+{% endif %}
+
+<form method="get">
+    <label for="kword">選擇週次：</label>
+    <select id="kword" name="kword" style="font-size: 1.5em; padding: 10px; width: 250px;" >
+        <optgroup label="春季">
+            <option value="春季第三週" {% if keyword == "春季第三週" %}selected{% endif %}>春季第三週</option>
+            <option value="春季第四週" {% if keyword == "春季第四週" %}selected{% endif %}>春季第四週</option>
+            <option value="春季第五週" {% if keyword == "春季第五週" %}selected{% endif %}>春季第五週</option>
+            <option value="春季第六週" {% if keyword == "春季第六週" %}selected{% endif %}>春季第六週</option>
+            <option value="春季第七週" {% if keyword == "春季第七週" %}selected{% endif %}>春季第七週</option>
+            <option value="春季第八週" {% if keyword == "春季第八週" %}selected{% endif %}>春季第八週</option>
+            <option value="春季第九週" {% if keyword == "春季第九週" %}selected{% endif %}>春季第九週</option>
+            <option value="春季第十週" {% if keyword == "春季第十週" %}selected{% endif %}>春季第十週</option>
+        </optgroup>
+        <optgroup label="秋季">
+            <option value="秋季第三週" {% if keyword == "秋季第三週" %}selected{% endif %}>秋季第三週</option>
+            <option value="秋季第四週" {% if keyword == "秋季第四週" %}selected{% endif %}>秋季第四週</option>
+            <option value="秋季第五週" {% if keyword == "秋季第五週" %}selected{% endif %}>秋季第五週</option>
+            <option value="秋季第六週" {% if keyword == "秋季第六週" %}selected{% endif %}>秋季第六週</option>
+            <option value="秋季第七週" {% if keyword == "秋季第七週" %}selected{% endif %}>秋季第七週</option>
+            <option value="秋季第八週" {% if keyword == "秋季第八週" %}selected{% endif %}>秋季第八週</option>
+            <option value="秋季第九週" {% if keyword == "秋季第九週" %}selected{% endif %}>秋季第九週</option>
+            <option value="秋季第十週" {% if keyword == "秋季第十週" %}selected{% endif %}>秋季第十週</option>
+        </optgroup>
+    </select>
+    <button type="submit">搜尋</button>
+</form>
+
+{% if results %}
+    <ul>
+        {% for snippet in results %}
+            <li class="result">{{ snippet|safe }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>沒有搜尋結果</p>
+{% endif %}
+
+</body>
+
+</html>
+

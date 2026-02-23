@@ -1,0 +1,12 @@
+{% extends "lightup/base.html" %}
+{% block title %}
+  {{ member.name }} - {{ block.super }}
+{% endblock title %}
+{% block blog_content %}
+  <article>
+    <h2>身份證字號：{{ member.personal_id }}</h2>
+    <p>姓名：{{ member.name }}</p>
+    <p>更新時間：{{ member.created_at }}</p>
+    <div>會籍狀況：{{ member.status }}</div>
+  </article>
+{% endblock blog_content %}

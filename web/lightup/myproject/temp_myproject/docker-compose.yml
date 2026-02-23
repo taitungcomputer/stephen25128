@@ -1,0 +1,59 @@
+services:
+  web:
+    build:
+      context: ./web
+    container_name: myproject-web
+    command: gunicorn myproject.wsgi:application --bind 0.0.0.0:8000
+    volumes:
+      - ./web:/app
+      - static_volume:/app/staticfiles
+    expose:
+      - 8000
+    env_file:
+      - ./web/.env
+    # web 不依賴 db，遊戲可以獨立運行
+    # depends_on:
+    #   - db
+
+  db:
+    image: mysql:8.0
+    container_name: myproject-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: a621206b
+      MYSQL_DATABASE: myproject
+      MYSQL_USER: myproject
+      MYSQL_PASSWORD: a621206b
+    command: --default-authentication-plugin=mysql_native_password --bind-address=0.0.0.0
+    volumes:
+      - db_data:/var/lib/mysql
+    ports:
+      - "3306:3306"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: myproject-phpmyadmin
+    restart: always
+    environment:
+      PMA_HOST: db
+      PMA_USER: root
+      PMA_PASSWORD: a621206b
+    depends_on:
+      - db
+    ports:
+      - "8080:80"
+
+  nginx:
+    image: nginx:latest
+    container_name: myproject-nginx
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+      - static_volume:/app/staticfiles
+    depends_on:
+      - web
+
+volumes:
+  db_data:
+  static_volume:

@@ -1,0 +1,74 @@
+import os
+from pathlib import Path
+from django.shortcuts import render
+from django.conf import settings
+
+def engBible(request):
+    template_name = "lightup/engbible.html"
+    file_path = Path(settings.BASE_DIR) /"lightup" / "niv.txt"
+    #file_path = os.path.join(BASE_DIR, "ChineseBible.txt")
+    try:
+        with file_path.open("r", encoding="utf-8") as f:
+            text = f.read()
+    except FileNotFoundError:
+        return render(request, template_name, {"error": f"file not exist：{file_path}"})
+
+    keyword = request.GET.get("kword", "Jesus").strip()
+    k = int(request.GET.get("klength", "20").strip())
+
+    results = []
+    start_pos = 0
+    while True:
+        pos = text.find(keyword, start_pos)
+        if pos == -1:
+            break
+        start = max(0, pos - k)
+        end = min(len(text), pos + len(keyword) + k)
+        results.append(text[start:end])
+        start_pos = pos + len(keyword)
+
+    request.session["rslist"] = [(i+1, s) for i, s in enumerate(results)]
+
+    return render(request, template_name, {
+        "keyword": keyword,
+        "k": k,
+        "results": results,
+        "count": len(results),
+    })
+
+
+def chineseBible(request):
+    template_name = "lightup/chinesebible.html"
+    file_path = Path(settings.BASE_DIR) /"lightup" / "ChineseBible.txt"
+    #file_path = os.path.join(BASE_DIR, "ChineseBible.txt")
+    try:
+        with file_path.open("r", encoding="utf-8") as f:
+            text = f.read()
+    except FileNotFoundError:
+        return render(request, template_name, {"error": f"檔案不存在：{file_path}"})
+
+    keyword = request.GET.get("kword", "耶穌").strip()
+    k = int(request.GET.get("klength", "20").strip())
+
+    results = []
+    start_pos = 0
+    while True:
+        pos = text.find(keyword, start_pos)
+        if pos == -1:
+            break
+        start = max(0, pos - k)
+        end = min(len(text), pos + len(keyword) + k)
+        results.append(text[start:end])
+        start_pos = pos + len(keyword)
+
+    request.session["rslist"] = [(i+1, s) for i, s in enumerate(results)]
+
+    return render(request, template_name, {
+        "keyword": keyword,
+        "k": k,
+        "results": results,
+        "count": len(results),
+    })
+
+def hello(request):
+    return render(request, "lightup/hello.html", {"k":"ok"})

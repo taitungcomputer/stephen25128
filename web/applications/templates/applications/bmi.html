@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="This is my first Django Template" />
+    <meta name="keywords" content="Django, Template, HTML" />
+    <title>Search</title>
+  </head>
+  <body>
+    <h1>
+      BMI
+    </h1>
+
+    <form method="get" action="">
+      <input type="text" name="w" placeholder="體重公斤" />
+      <input type="text" name="h" placeholder="身高公分" />
+      <button type="submit">
+         GET計算
+      </button>
+    </form>
+    <form method="post" action="">
+        {% csrf_token %}
+      <input type="text" name="w" placeholder="體重公斤" />
+      <input type="text" name="h" placeholder="身高公分" />
+      <button type="submit">
+        POST計算
+      </button>
+    </form>
+    <p></p>
+{%if bmi %}
+    你輸入的體重{{w}}公斤,身高{{h}}公分 
+    <br>BMI:{{bmi}} 
+{% endif %}
+  </body>
+</html>
