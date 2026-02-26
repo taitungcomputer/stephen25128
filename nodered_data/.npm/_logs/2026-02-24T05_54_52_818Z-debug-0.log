@@ -1,0 +1,105 @@
+0 verbose cli /usr/local/bin/node /usr/local/bin/npm
+1 info using npm@10.8.2
+2 info using node@v20.20.0
+3 silly config load:file:/usr/local/lib/node_modules/npm/npmrc
+4 silly config load:file:/data/.npmrc
+5 silly config load:file:/usr/src/node-red/.npmrc
+6 silly config load:file:/usr/local/etc/npmrc
+7 verbose title npm install node-red-node-mysql@3.0.0
+8 verbose argv "install" "--no-audit" "--no-update-notifier" "--no-fund" "--save" "--save-prefix" "~" "--omit" "dev" "--engine-strict" "node-red-node-mysql@3.0.0"
+9 verbose logfile logs-max:10 dir:/data/.npm/_logs/2026-02-24T05_54_52_818Z-
+10 verbose logfile /data/.npm/_logs/2026-02-24T05_54_52_818Z-debug-0.log
+11 silly packumentCache heap:2078277632 maxSize:519569408 maxEntrySize:259784704
+12 silly logfile done cleaning log files
+13 silly idealTree buildDeps
+14 silly fetch manifest node-red-node-mysql@3.0.0
+15 silly packumentCache full:https://registry.npmjs.org/node-red-node-mysql cache-miss
+16 http fetch GET 200 https://registry.npmjs.org/node-red-node-mysql 403ms (cache miss)
+17 silly packumentCache full:https://registry.npmjs.org/node-red-node-mysql set size:undefined disposed:false
+18 silly placeDep ROOT node-red-node-mysql@3.0.0 OK for: node-red-project@0.0.1 want: 3.0.0
+19 silly fetch manifest mysql2@^3.16.0
+20 silly packumentCache full:https://registry.npmjs.org/mysql2 cache-miss
+21 http fetch GET 200 https://registry.npmjs.org/mysql2 246ms (cache miss)
+22 silly packumentCache full:https://registry.npmjs.org/mysql2 set size:undefined disposed:false
+23 silly fetch manifest @types/node@>= 8
+24 silly packumentCache full:https://registry.npmjs.org/@types%2fnode cache-miss
+25 http fetch GET 200 https://registry.npmjs.org/@types%2fnode 45ms (cache hit)
+26 silly packumentCache full:https://registry.npmjs.org/@types%2fnode set size:10864169 disposed:false
+27 silly placeDep ROOT mysql2@3.18.0 OK for: node-red-node-mysql@3.0.0 want: ^3.16.0
+28 silly fetch manifest aws-ssl-profiles@^1.1.2
+29 silly packumentCache full:https://registry.npmjs.org/aws-ssl-profiles cache-miss
+30 http fetch GET 200 https://registry.npmjs.org/aws-ssl-profiles 209ms (cache miss)
+31 silly packumentCache full:https://registry.npmjs.org/aws-ssl-profiles set size:undefined disposed:false
+32 silly fetch manifest denque@^2.1.0
+33 silly packumentCache full:https://registry.npmjs.org/denque cache-miss
+34 http fetch GET 200 https://registry.npmjs.org/denque 551ms (cache miss)
+35 silly packumentCache full:https://registry.npmjs.org/denque set size:undefined disposed:false
+36 silly fetch manifest generate-function@^2.3.1
+37 silly packumentCache full:https://registry.npmjs.org/generate-function cache-miss
+38 http fetch GET 200 https://registry.npmjs.org/generate-function 215ms (cache miss)
+39 silly packumentCache full:https://registry.npmjs.org/generate-function set size:undefined disposed:false
+40 silly fetch manifest iconv-lite@^0.7.2
+41 silly packumentCache full:https://registry.npmjs.org/iconv-lite cache-miss
+42 http fetch GET 200 https://registry.npmjs.org/iconv-lite 34ms (cache miss)
+43 silly packumentCache full:https://registry.npmjs.org/iconv-lite set size:undefined disposed:false
+44 silly fetch manifest lru.min@^1.1.4
+45 silly packumentCache full:https://registry.npmjs.org/lru.min cache-miss
+46 http fetch GET 200 https://registry.npmjs.org/lru.min 221ms (cache miss)
+47 silly packumentCache full:https://registry.npmjs.org/lru.min set size:undefined disposed:false
+48 silly fetch manifest named-placeholders@^1.1.6
+49 silly packumentCache full:https://registry.npmjs.org/named-placeholders cache-miss
+50 http fetch GET 200 https://registry.npmjs.org/named-placeholders 210ms (cache miss)
+51 silly packumentCache full:https://registry.npmjs.org/named-placeholders set size:undefined disposed:false
+52 silly fetch manifest sql-escaper@^1.3.3
+53 silly packumentCache full:https://registry.npmjs.org/sql-escaper cache-miss
+54 http fetch GET 200 https://registry.npmjs.org/sql-escaper 208ms (cache miss)
+55 silly packumentCache full:https://registry.npmjs.org/sql-escaper set size:undefined disposed:false
+56 silly placeDep ROOT aws-ssl-profiles@1.1.2 OK for: mysql2@3.18.0 want: ^1.1.2
+57 silly placeDep ROOT denque@2.1.0 OK for: mysql2@3.18.0 want: ^2.1.0
+58 silly placeDep ROOT generate-function@2.3.1 OK for: mysql2@3.18.0 want: ^2.3.1
+59 silly placeDep ROOT iconv-lite@0.7.2 OK for: mysql2@3.18.0 want: ^0.7.2
+60 silly placeDep ROOT lru.min@1.1.4 OK for: mysql2@3.18.0 want: ^1.1.4
+61 silly placeDep ROOT named-placeholders@1.1.6 OK for: mysql2@3.18.0 want: ^1.1.6
+62 silly placeDep ROOT sql-escaper@1.3.3 OK for: mysql2@3.18.0 want: ^1.3.3
+63 silly fetch manifest is-property@^1.0.2
+64 silly packumentCache full:https://registry.npmjs.org/is-property cache-miss
+65 http fetch GET 200 https://registry.npmjs.org/is-property 535ms (cache miss)
+66 silly packumentCache full:https://registry.npmjs.org/is-property set size:undefined disposed:false
+67 silly placeDep ROOT is-property@1.0.2 OK for: generate-function@2.3.1 want: ^1.0.2
+68 silly reify moves {}
+69 silly tarball no local data for sql-escaper@https://registry.npmjs.org/sql-escaper/-/sql-escaper-1.3.3.tgz. Extracting by manifest.
+70 silly tarball no local data for is-property@https://registry.npmjs.org/is-property/-/is-property-1.0.2.tgz. Extracting by manifest.
+71 silly tarball no local data for named-placeholders@https://registry.npmjs.org/named-placeholders/-/named-placeholders-1.1.6.tgz. Extracting by manifest.
+72 silly tarball no local data for lru.min@https://registry.npmjs.org/lru.min/-/lru.min-1.1.4.tgz. Extracting by manifest.
+73 silly tarball no local data for iconv-lite@https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.7.2.tgz. Extracting by manifest.
+74 silly tarball no local data for generate-function@https://registry.npmjs.org/generate-function/-/generate-function-2.3.1.tgz. Extracting by manifest.
+75 silly tarball no local data for aws-ssl-profiles@https://registry.npmjs.org/aws-ssl-profiles/-/aws-ssl-profiles-1.1.2.tgz. Extracting by manifest.
+76 silly tarball no local data for denque@https://registry.npmjs.org/denque/-/denque-2.1.0.tgz. Extracting by manifest.
+77 silly tarball no local data for mysql2@https://registry.npmjs.org/mysql2/-/mysql2-3.18.0.tgz. Extracting by manifest.
+78 silly tarball no local data for node-red-node-mysql@https://registry.npmjs.org/node-red-node-mysql/-/node-red-node-mysql-3.0.0.tgz. Extracting by manifest.
+79 http fetch GET 200 https://registry.npmjs.org/sql-escaper/-/sql-escaper-1.3.3.tgz 164ms (cache miss)
+80 http fetch GET 200 https://registry.npmjs.org/is-property/-/is-property-1.0.2.tgz 182ms (cache miss)
+81 http fetch GET 200 https://registry.npmjs.org/generate-function/-/generate-function-2.3.1.tgz 181ms (cache miss)
+82 http fetch GET 200 https://registry.npmjs.org/named-placeholders/-/named-placeholders-1.1.6.tgz 189ms (cache miss)
+83 http fetch GET 200 https://registry.npmjs.org/denque/-/denque-2.1.0.tgz 189ms (cache miss)
+84 http fetch GET 200 https://registry.npmjs.org/node-red-node-mysql/-/node-red-node-mysql-3.0.0.tgz 191ms (cache miss)
+85 http fetch GET 200 https://registry.npmjs.org/lru.min/-/lru.min-1.1.4.tgz 203ms (cache miss)
+86 http fetch GET 200 https://registry.npmjs.org/aws-ssl-profiles/-/aws-ssl-profiles-1.1.2.tgz 237ms (cache miss)
+87 http fetch GET 200 https://registry.npmjs.org/iconv-lite/-/iconv-lite-0.7.2.tgz 273ms (cache miss)
+88 http fetch GET 200 https://registry.npmjs.org/mysql2/-/mysql2-3.18.0.tgz 316ms (cache miss)
+89 silly ADD node_modules/is-property
+90 silly ADD node_modules/sql-escaper
+91 silly ADD node_modules/named-placeholders
+92 silly ADD node_modules/lru.min
+93 silly ADD node_modules/iconv-lite
+94 silly ADD node_modules/generate-function
+95 silly ADD node_modules/denque
+96 silly ADD node_modules/aws-ssl-profiles
+97 silly ADD node_modules/mysql2
+98 silly ADD node_modules/node-red-node-mysql
+99 verbose cwd /data
+100 verbose os Linux 6.17.0-14-generic
+101 verbose node v20.20.0
+102 verbose npm  v10.8.2
+103 verbose exit 0
+104 info ok

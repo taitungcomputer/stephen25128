@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="utf-8">
+    <title>信件搜尋</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+<div class="container py-4">
+    <h1 class="mb-4 text-center">📬 文章搜尋</h1>
+    <!-- 回首頁按鈕 --> <div class="text-center mb-4"> <a href="https://stephen25128.duckdns.org/" class="btn btn-secondary">回首頁</a> </div>
+
+    <!-- 搜尋表單 -->
+    <form method="get" class="row g-2 mb-4">
+        <div class="col-9 col-md-10">
+            <input type="text" name="q" value="{{ query }}" class="form-control" placeholder="輸入關鍵字 (標題或內容)">
+        </div>
+        <div class="col-3 col-md-2">
+            <button type="submit" class="btn btn-primary w-100">搜尋</button>
+        </div>
+    </form>
+
+    <!-- 搜尋結果 -->
+    {% if results %}
+        <div class="list-group">
+            {% for title, body in results.items %}
+                <div class="list-group-item mb-3 shadow-sm">
+                    <h5 class="fw-bold">{{ title }}</h5>
+                    <pre class="mb-0" style="white-space: pre-wrap;">{{ body }}</pre>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <div class="alert alert-warning text-center">
+            沒有找到符合的信件。
+        </div>
+    {% endif %}
+</div>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

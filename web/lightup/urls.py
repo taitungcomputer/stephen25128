@@ -10,6 +10,7 @@ urlpatterns = [
     path("hello/", pyCode.hello, name="hello"),
     path("engbible/", pyCode.engBible, name="engbible"),
     path("happiness/", pyCode.happiness, name="happiness"),
+    path("letters/", pyCode.letters, name="letters"),
     path("members/", views.member_list, name="member_list"),
     path("members/<int:member_id>", views.member_detail, name="member_detail"),
     path("income/", views.income_list, name="income_list"),

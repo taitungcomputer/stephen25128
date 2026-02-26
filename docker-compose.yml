@@ -1,4 +1,4 @@
-version: "3.9"
+#version: "3.9"
 
 services:
   web:
@@ -96,6 +96,23 @@ services:
       - ./certbot/conf:/etc/letsencrypt
     depends_on:
       - nginx
+    dns:
+      - 8.8.8.8
+      - 1.1.1.1
+
+  nodered:
+    image: nodered/node-red:latest
+    container_name: myproject-nodered
+    restart: always
+    ports:
+      - "1880:1880"
+    volumes:
+      - ./nodered_data:/data
+      - ./myproject/web/data:/shared_data
+    environment:
+      - TZ=Asia/Taipei
+    depends_on:
+      - db
     dns:
       - 8.8.8.8
       - 1.1.1.1

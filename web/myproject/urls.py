@@ -30,6 +30,7 @@ urlpatterns = [
     path("donate/",include("donate.urls")),
     #path("", include("myproject.urls")),
     path("", views.home, name="home"),
+    path("api/", views.api_view, name="api_view"),
 ]
 
 if settings.DEBUG:

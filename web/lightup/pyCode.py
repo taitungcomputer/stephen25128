@@ -4,6 +4,41 @@ from pathlib import Path
 from django.conf import settings
 from django.shortcuts import render
 
+from pathlib import Path
+from django.conf import settings
+from django.shortcuts import render
+
+def letters(request):
+    query = request.GET.get("q", "")
+    results = {}
+    file_path = Path(settings.BASE_DIR) / "lightup" / "letters.txt"
+
+    # 讀取檔案
+    with open(file_path, "r", encoding="utf-8") as f:
+        content = f.read()
+
+    # 分隔
+    blocks = content.split("---------------")
+    for block in blocks:
+        block = block.strip()
+        if block.startswith("信件") or block.startswith("標題"):
+            lines = block.splitlines()
+            title = lines[0].strip()
+            body = "\n".join(lines[1:])
+            results[title] = body
+
+    # 如果有搜尋字串，就過濾 (標題或內容都能比對)
+    filtered = {}
+    if query:
+        for title, body in results.items():
+            if query in title or query in body:
+                filtered[title] = body
+    else:
+        filtered = results
+
+    return render(request, "lightup/letters.html", {"results": filtered, "query": query})
+
+
 
 def happiness(request):
     template_name = "lightup/happiness.html"
