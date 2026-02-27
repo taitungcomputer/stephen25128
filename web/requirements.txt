@@ -7,3 +7,5 @@ django-extensions
 pandas>=2.2
 
 Pillow
+
+opencv-python-headless

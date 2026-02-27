@@ -1621,7 +1621,7 @@
     },
     {
         "finalize": "",
-        "func": "// 取得原始資料\nlet data = msg.payload;\n\n// 模擬校正：假設原始值 55 對應大約 0 ppm\n// 這裡需要依照你的感測器校正曲線調整\n// 我先給一個簡單線性換算範例\nlet ppm = data.mq7 * 0.5;   // 假設比例，需依實際校正修改\n\n// 判斷安全範圍\nlet status = \"正常\";\nif (ppm > 9 && ppm <= 50) {\n    status = \"注意：超過 WHO 建議值\";\n} else if (ppm > 50) {\n    status = \"警告：超過 OSHA 標準\";\n}\n\n// 加入到輸出物件\nmsg.payload = {\n    mq7_raw: data.mq7,\n    ppm_est: ppm,\n    temp: data.temp,\n    humidity: data.humidity,\n    enthalpy: data.enthalpy,\n    timestamp: data.timestamp,\n    status: status\n};\n\nreturn msg;\n",
+        "func": "// 取得原始資料\nlet data = msg.payload;\n\n// 模擬校正：假設原始值 55 對應大約 0 ppm\nlet ppm = data.mq7 * 0.5;   // 假設比例，需依實際校正修改\n\n// 判斷安全範圍\nlet status = \"正常\";\nif (ppm > 9 && ppm <= 50) {\n    status = \"注意：超過 WHO 建議值\";\n} else if (ppm > 50) {\n    status = \"警告：超過 OSHA 標準\";\n}\n\n// 轉換 timestamp 為台北時間\nlet utcDate = new Date(data.timestamp);\nlet taipeiTime = utcDate.toLocaleString(\"zh-TW\", {\n    timeZone: \"Asia/Taipei\",\n    hour12: false\n});\n\n// 加入到輸出物件\nmsg.payload = {\n    mq7_raw: data.mq7,\n    ppm_est: ppm,\n    temp: data.temp,\n    humidity: data.humidity,\n    enthalpy: data.enthalpy,\n    timestamp: taipeiTime,   // ⚠️ 改成 taipeiTime，不要用 data.timestamp\n    status: status\n};\n\nreturn msg;\n",
         "id": "4093d71cdb3bbece",
         "initialize": "",
         "libs": [],
@@ -1636,7 +1636,8 @@
                 "8848ba7f05562567",
                 "dcfd4d36ef21ad30",
                 "8a9582d1288b8b7f",
-                "9017c4d841bf4f5f"
+                "9017c4d841bf4f5f",
+                "bdb3651869f257d1"
             ]
         ],
         "x": 510,
@@ -2008,8 +2009,7 @@
         "url": "https://stephen25128.duckdns.org/api/",
         "wires": [
             [
-                "4093d71cdb3bbece",
-                "bdb3651869f257d1"
+                "4093d71cdb3bbece"
             ]
         ],
         "x": 290,

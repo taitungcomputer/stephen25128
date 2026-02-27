@@ -14,5 +14,6 @@ urlpatterns = [
     path("biblequiz/",views.quiz_view, name="biblequiz"),
     path("biblereview/",views.biblereview, name="biblereview"),
     path("vocabulary/",views.vocabulary, name="vocabulary"),
+    path("cv2/",views.upload_zip, name="upload_zip"),
 
 ]

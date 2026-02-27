@@ -1,7 +1,52 @@
 from django.http import HttpResponse
 import csv
 import random
+import shutil
+import os
+import zipfile
+from django.core.files.storage import default_storage
+from django.conf import settings
 from django.shortcuts import render
+import cv2
+
+def is_blurry(image_path, threshold=50):
+    img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
+    if img is None:
+        return False
+    variance = cv2.Laplacian(img, cv2.CV_64F).var()
+    return variance < threshold
+
+def upload_zip(request):
+    blurry_photos = []
+    if request.method == "POST" and request.FILES.get("zipfile"):
+        zip_file = request.FILES["zipfile"]
+        zip_path = default_storage.save("tmp/" + zip_file.name, zip_file)
+
+        extract_dir = os.path.join(settings.MEDIA_ROOT, "extracted")
+        # 清空舊目錄
+        if os.path.exists(extract_dir):
+            shutil.rmtree(extract_dir)
+        os.makedirs(extract_dir, exist_ok=True)
+
+        zip_full_path = os.path.join(settings.MEDIA_ROOT, zip_path)
+        with zipfile.ZipFile(zip_full_path, "r") as zip_ref:
+            zip_ref.extractall(extract_dir)
+
+        # 遍歷解壓縮後的檔案
+        for root, _, files in os.walk(extract_dir):
+            for f in files:
+                file_path = os.path.join(root, f)
+                if is_blurry(file_path):
+                    blurry_photos.append(f)
+
+        # ⚡ 清空 tmp 檔案
+        if os.path.exists(zip_full_path):
+            os.remove(zip_full_path)
+
+    return render(request, "applications/cv2.html", {"blurry_photos": blurry_photos})
+
+
+
 
 def get_csv_data_en():
     data = []

