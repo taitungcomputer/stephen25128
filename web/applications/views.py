@@ -9,7 +9,7 @@ from django.conf import settings
 from django.shortcuts import render
 import cv2
 
-def is_blurry(image_path, threshold=50):
+def is_blurry(image_path, threshold=150):
     img = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
     if img is None:
         return False
@@ -42,6 +42,9 @@ def upload_zip(request):
         # ⚡ 清空 tmp 檔案
         if os.path.exists(zip_full_path):
             os.remove(zip_full_path)
+            
+    # 依檔名排序
+    blurry_photos = sorted(blurry_photos)        
 
     return render(request, "applications/cv2.html", {"blurry_photos": blurry_photos})
 

@@ -214,22 +214,42 @@
     {
         "group": "caaebaddf18725fa",
         "height": 1,
-        "id": "9871d701b62d4e3a",
+        "id": "61019cbeb970ad9c",
         "name": "spacer",
-        "order": 4,
+        "order": 5,
         "type": "ui_spacer",
-        "width": 6,
-        "z": "e6fc27779f02719e"
+        "width": 3,
+        "z": "ec1515cb77dddea4"
     },
     {
-        "group": "a967817bd922222a",
+        "group": "caaebaddf18725fa",
         "height": 1,
-        "id": "02f9c79330c81c38",
+        "id": "0e7abff09d65da79",
         "name": "spacer",
-        "order": 3,
+        "order": 6,
         "type": "ui_spacer",
-        "width": 6,
-        "z": "e6fc27779f02719e"
+        "width": 12,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "group": "caaebaddf18725fa",
+        "height": 1,
+        "id": "8eae469c51b77cd7",
+        "name": "spacer",
+        "order": 7,
+        "type": "ui_spacer",
+        "width": 3,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "group": "caaebaddf18725fa",
+        "height": 1,
+        "id": "9f8be9697c09f6eb",
+        "name": "spacer",
+        "order": 9,
+        "type": "ui_spacer",
+        "width": 3,
+        "z": "ec1515cb77dddea4"
     },
     {
         "crontab": "",
@@ -323,7 +343,8 @@
                 "5a608a0613308c8a",
                 "f5d8b9163b8311fc",
                 "06d655c18036f62b",
-                "3defb5055f37b03e"
+                "3defb5055f37b03e",
+                "4e37237f0e4d29a2"
             ]
         ],
         "x": 510,
@@ -370,8 +391,8 @@
         "x": 970,
         "xformat": "HH:mm:ss",
         "y": 220,
-        "ymax": "",
-        "ymin": "",
+        "ymax": "30",
+        "ymin": "0",
         "z": "d8842b55346820a3"
     },
     {
@@ -441,8 +462,8 @@
         "x": 980,
         "xformat": "HH:mm:ss",
         "y": 280,
-        "ymax": "",
-        "ymin": "",
+        "ymax": "40",
+        "ymin": "5",
         "z": "d8842b55346820a3"
     },
     {
@@ -512,8 +533,8 @@
         "x": 970,
         "xformat": "HH:mm:ss",
         "y": 340,
-        "ymax": "",
-        "ymin": "",
+        "ymax": "100",
+        "ymin": "0",
         "z": "d8842b55346820a3"
     },
     {
@@ -583,8 +604,8 @@
         "x": 970,
         "xformat": "HH:mm:ss",
         "y": 400,
-        "ymax": "",
-        "ymin": "",
+        "ymax": "1100",
+        "ymin": "900",
         "z": "d8842b55346820a3"
     },
     {
@@ -667,8 +688,8 @@
         "tostatus": false,
         "type": "debug",
         "wires": [],
-        "x": 480,
-        "y": 60,
+        "x": 820,
+        "y": 140,
         "z": "d8842b55346820a3"
     },
     {
@@ -1573,11 +1594,11 @@
         "className": "",
         "format": "<a href = https://stephen25128.duckdns.org>回首頁</a>\n",
         "fwdInMessages": true,
-        "group": "a967817bd922222a",
+        "group": "caaebaddf18725fa",
         "height": 1,
         "id": "baa3da5ee2772d53",
         "name": "",
-        "order": 4,
+        "order": 8,
         "resendOnRefresh": true,
         "storeOutMessages": true,
         "templateScope": "local",
@@ -1607,7 +1628,7 @@
                 "vt": "str"
             }
         ],
-        "repeat": "120",
+        "repeat": "30",
         "topic": "",
         "type": "inject",
         "wires": [
@@ -1621,7 +1642,7 @@
     },
     {
         "finalize": "",
-        "func": "// 取得原始資料\nlet data = msg.payload;\n\n// 模擬校正：假設原始值 55 對應大約 0 ppm\nlet ppm = data.mq7 * 0.5;   // 假設比例，需依實際校正修改\n\n// 判斷安全範圍\nlet status = \"正常\";\nif (ppm > 9 && ppm <= 50) {\n    status = \"注意：超過 WHO 建議值\";\n} else if (ppm > 50) {\n    status = \"警告：超過 OSHA 標準\";\n}\n\n// 轉換 timestamp 為台北時間\nlet utcDate = new Date(data.timestamp);\nlet taipeiTime = utcDate.toLocaleString(\"zh-TW\", {\n    timeZone: \"Asia/Taipei\",\n    hour12: false\n});\n\n// 加入到輸出物件\nmsg.payload = {\n    mq7_raw: data.mq7,\n    ppm_est: ppm,\n    temp: data.temp,\n    humidity: data.humidity,\n    enthalpy: data.enthalpy,\n    timestamp: taipeiTime,   // ⚠️ 改成 taipeiTime，不要用 data.timestamp\n    status: status\n};\n\nreturn msg;\n",
+        "func": "// 取得原始資料\nlet data = msg.payload;\n\n// 模擬校正：假設原始值 55 對應大約 0 ppm\nlet ppm = data.mq135_raw;   // 假設比例，需依實際校正修改\n\n// 判斷安全範圍\nlet status = \"正常\";\nif ( ppm > 300) {\n    status = \"注意：室內空氣品質不佳\";\n} \n\n// 處理震動訊號\nlet vibration = 0;\nif (data.vibration === \"detected\") {\n    vibration = 1;\n}\n\n// 轉換 timestamp 為台北時間\nlet utcDate = new Date(data.timestamp);\nlet taipeiTime = utcDate.toLocaleString(\"zh-TW\", {\n    timeZone: \"Asia/Taipei\",\n    hour12: false\n});\n\n// 加入到輸出物件\nmsg.payload = {\n    mq135_raw: data.mq135_raw,\n    ppm_est: data.mq135_ppm,\n    temp: data.temp,\n    humidity: data.humidity,\n    enthalpy: data.enthalpy,\n    timestamp: taipeiTime,   // ⚠️ 改成 taipeiTime，不要用 data.timestamp\n    status: status,\n    vibration: vibration\n};\n\nreturn msg;\n",
         "id": "4093d71cdb3bbece",
         "initialize": "",
         "libs": [],
@@ -1637,6 +1658,8 @@
                 "dcfd4d36ef21ad30",
                 "8a9582d1288b8b7f",
                 "9017c4d841bf4f5f",
+                "0faf41b1f5847937",
+                "a9325ad1f41327ee",
                 "bdb3651869f257d1"
             ]
         ],
@@ -1656,7 +1679,7 @@
                 "p": "payload",
                 "pt": "msg",
                 "t": "set",
-                "to": "msg.payload.ppm_est",
+                "to": "msg.payload.mq135_raw",
                 "tot": "msg"
             }
         ],
@@ -1772,7 +1795,7 @@
         "height": 5,
         "id": "a5eebd48d8789d57",
         "interpolate": "linear",
-        "label": "一氧化碳濃度",
+        "label": "CO2濃度",
         "legend": "false",
         "name": "",
         "nodata": "",
@@ -1789,7 +1812,7 @@
         "wires": [
             []
         ],
-        "x": 880,
+        "x": 860,
         "xformat": "HH:mm:ss",
         "y": 60,
         "ymax": "",
@@ -1857,14 +1880,14 @@
         "cutout": 0,
         "dot": false,
         "group": "a967817bd922222a",
-        "height": 5,
+        "height": 4,
         "id": "582c52da161701dd",
         "interpolate": "linear",
         "label": "辦公室氣溫",
         "legend": "false",
         "name": "",
         "nodata": "",
-        "order": 1,
+        "order": 2,
         "outputs": 1,
         "removeOlder": "24",
         "removeOlderPoints": "",
@@ -1908,7 +1931,7 @@
         "legend": "false",
         "name": "",
         "nodata": "",
-        "order": 2,
+        "order": 3,
         "outputs": 1,
         "removeOlder": "24",
         "removeOlderPoints": "",
@@ -1964,15 +1987,15 @@
         "group": "caaebaddf18725fa",
         "height": 1,
         "id": "fa6b86c97bd8750d",
-        "label": "一氧化碳警報",
+        "label": "CO2",
         "layout": "row-spread",
         "name": "",
-        "order": 3,
+        "order": 4,
         "style": false,
         "type": "ui_text",
-        "width": 6,
+        "width": 2,
         "wires": [],
-        "x": 880,
+        "x": 850,
         "y": 240,
         "z": "ec1515cb77dddea4"
     },
@@ -1988,8 +2011,8 @@
         "tostatus": false,
         "type": "debug",
         "wires": [],
-        "x": 500,
-        "y": 180,
+        "x": 480,
+        "y": 120,
         "z": "ec1515cb77dddea4"
     },
     {
@@ -2014,6 +2037,125 @@
         ],
         "x": 290,
         "y": 60,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "0faf41b1f5847937",
+        "name": "震動警報",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "58e6c31e5f5042f9"
+            ]
+        ],
+        "x": 680,
+        "y": 300,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#7a990a",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#8e0606",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "a967817bd922222a",
+        "height": 4,
+        "id": "7f892f366637c0e1",
+        "interpolate": "linear",
+        "label": "震動警報",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 1,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 12,
+        "wires": [
+            []
+        ],
+        "x": 880,
+        "xformat": "HH:mm:ss",
+        "y": 380,
+        "ymax": "2",
+        "ymin": "-1",
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "className": "",
+        "color": "#db1414",
+        "font": "",
+        "fontSize": 16,
+        "format": "{{msg.payload.timestamp}}：震動警報：{{msg.payload.vibration}}",
+        "group": "caaebaddf18725fa",
+        "height": 1,
+        "id": "58e6c31e5f5042f9",
+        "label": "",
+        "layout": "row-spread",
+        "name": "",
+        "order": 3,
+        "style": true,
+        "type": "ui_text",
+        "width": 7,
+        "wires": [],
+        "x": 850,
+        "y": 300,
+        "z": "ec1515cb77dddea4"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "a9325ad1f41327ee",
+        "name": "震動警報",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.vibration",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "7f892f366637c0e1"
+            ]
+        ],
+        "x": 680,
+        "y": 360,
         "z": "ec1515cb77dddea4"
     }
 ]
