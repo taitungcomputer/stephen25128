@@ -1,0 +1,9 @@
+# Certbot 憑證
+certbot/conf/
+certbot/www/
+
+# Node-RED 資料
+nodered_data/
+
+# Django 媒體資料
+web/media/

